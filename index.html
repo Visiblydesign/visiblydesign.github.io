@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Visibly-Stand: 2026-05-26e (Hero Textblock-Abstand) -->
+<!-- Visibly-Stand: 2026-05-26g (Pakete-Grid) -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -493,8 +493,20 @@
 
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
+  }
+
+  @media (min-width: 1100px) {
+    .pricing-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .pricing-card {
@@ -1022,7 +1034,7 @@
     .hero .hero-badge {
       font-size: 0.78rem;
       padding: 0.4rem 0.85rem;
-      margin-bottom: 1.35rem !important;
+      margin-bottom: 0.75rem !important;
       letter-spacing: 0.04em;
       white-space: nowrap;
       max-width: calc(100vw - 10vw);
@@ -1035,25 +1047,27 @@
       line-height: 1.45 !important;
     }
 
+    /* Block 1: Untertitel direkt unter Headline */
     .hero .hero-sub {
       font-size: 1.05rem;
-      margin-top: 1.5rem !important;
+      margin-top: 0.5rem !important;
       margin-bottom: 0 !important;
       line-height: 1.55;
     }
 
+    /* Deutlich mehr Abstand nach Block 1 (vor Buttons + nächster Text) */
     .hero .hero-actions {
       flex-direction: column;
       width: 100%;
       max-width: 280px;
-      margin-top: 3rem !important;
+      margin-top: 3.75rem !important;
       gap: 0.75rem;
     }
     .hero-actions a { width: 100%; text-align: center; }
 
     .hero .hero-trust {
       font-size: 0.82rem;
-      margin-top: 2.75rem !important;
+      margin-top: 3.25rem !important;
       padding: 0 0.25rem;
       line-height: 1.55;
     }
@@ -1081,7 +1095,6 @@
     .services, .pricing, .testimonials, .process, .faq { padding: 4rem 5vw; }
     .contact { padding: 4rem 5vw; }
     .cta-band { padding: 2.5rem 5vw; }
-    .pricing-grid { grid-template-columns: 1fr; }
     h2 { margin-bottom: 2rem; font-size: 1.65rem; }
     nav { padding: 0.9rem 5vw; }
   }
