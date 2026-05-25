@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Visibly-Stand: 2026-05-26c (mobile Abstände v2) -->
+<!-- Visibly-Stand: 2026-05-26e (Hero Textblock-Abstand) -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -1012,69 +1012,69 @@
     .form-row { grid-template-columns: 1fr; }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .hero {
-      min-height: auto;
+      min-height: auto !important;
       justify-content: flex-start;
-      padding: 3.5rem 5vw 2rem;
+      padding: 3.25rem 5vw 2rem !important;
     }
 
-    .hero-badge {
+    .hero .hero-badge {
       font-size: 0.78rem;
       padding: 0.4rem 0.85rem;
-      margin-bottom: 0.45rem;
+      margin-bottom: 1.35rem !important;
       letter-spacing: 0.04em;
       white-space: nowrap;
       max-width: calc(100vw - 10vw);
     }
 
-    h1 {
+    .hero h1 {
       font-size: 2rem;
       padding: 0 0.25rem;
-      margin-bottom: 0;
-      line-height: 1.2;
+      margin-bottom: 0 !important;
+      line-height: 1.45 !important;
     }
 
-    .hero-sub {
+    .hero .hero-sub {
       font-size: 1.05rem;
-      margin-top: 0.45rem !important;
-      margin-bottom: 0;
+      margin-top: 1.5rem !important;
+      margin-bottom: 0 !important;
       line-height: 1.55;
     }
 
-    .hero-actions {
+    .hero .hero-actions {
       flex-direction: column;
       width: 100%;
       max-width: 280px;
-      margin-top: 2.75rem;
+      margin-top: 3rem !important;
       gap: 0.75rem;
     }
     .hero-actions a { width: 100%; text-align: center; }
 
-    .hero-trust {
+    .hero .hero-trust {
       font-size: 0.82rem;
-      margin-top: 2.25rem;
+      margin-top: 2.75rem !important;
       padding: 0 0.25rem;
       line-height: 1.55;
     }
 
-    .hero-proof {
+    .hero .hero-proof {
       font-size: 0.82rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem !important;
       padding: 0 0.25rem;
       line-height: 1.55;
     }
 
-    .stats {
+    .hero .stats {
       gap: 1.25rem 1.75rem;
-      margin-top: 2.25rem;
-      padding-top: 1.5rem;
+      margin-top: 2.75rem !important;
+      padding-top: 1.75rem !important;
     }
 
     .stat-num { font-size: 1.5rem; }
     .stat-label { font-size: 0.68rem; }
 
-    .hero-scroll { margin-top: 1rem; }
+    .hero-scroll { margin-top: 1.25rem; }
 
     .contact-box { padding: 1.75rem 1.25rem; }
     .pricing-header, .pricing-toggle, .pricing-details-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
@@ -1087,7 +1087,7 @@
   }
 
   @media (max-width: 380px) {
-    .hero { padding-top: 3.25rem; }
+    .hero { padding-top: 2.85rem !important; }
     .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
     h1 { font-size: 1.85rem; }
     .hero-sub { font-size: 1rem; }
