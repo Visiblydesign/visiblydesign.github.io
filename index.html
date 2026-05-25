@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professionelle Online-Shops, überzeugende Texte und Social-Media-Content für Unternehmen – komplett remote, schnell und unkompliziert.">
+<meta name="description" content="Online-Shops, Texte, Logos und Social-Media-Content – transparente Pakete ab 29€, Logo ab 49€. Komplett remote, jetzt anfragen.">
 <title>Visibly – Digitale Präsenz die überzeugt</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon-32x32.png">
@@ -88,7 +88,21 @@
   }
   nav a:hover { color: var(--text); }
 
-  .nav-links { display: flex; gap: 2rem; }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.45rem 0.65rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-toggle:hover { border-color: rgba(79,142,255,0.4); background: rgba(79,142,255,0.05); }
 
   .nav-cta {
     background: var(--accent);
@@ -181,6 +195,66 @@
     animation: fadeUp 0.6s 0.3s ease both;
   }
 
+  .hero-trust {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
+  .hero-trust strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .hero-proof {
+    margin-top: 0.85rem;
+    font-size: 0.88rem;
+    animation: fadeUp 0.6s 0.38s ease both;
+  }
+  .hero-proof a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-proof a:hover { color: var(--accent); }
+  .hero-proof .proof-stars {
+    color: #f5c542;
+    letter-spacing: 0.1em;
+    margin-right: 0.35rem;
+  }
+
+  .hero-scroll {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 3rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+    animation: fadeUp 0.6s 0.45s ease both;
+  }
+  .hero-scroll:hover { color: var(--accent); }
+  .hero-scroll-arrow {
+    font-size: 0.9rem;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(5px); opacity: 1; }
+  }
+
+  .stat-num .stat-prefix {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-right: 0.15rem;
+  }
+
   .btn-primary {
     background: var(--accent);
     color: #fff;
@@ -212,9 +286,11 @@
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
-    margin-top: 5rem;
+    margin-top: 3rem;
     padding-top: 3rem;
     border-top: 1px solid var(--border);
+    width: 100%;
+    max-width: 640px;
     animation: fadeUp 0.6s 0.4s ease both;
   }
 
@@ -265,7 +341,7 @@
   .service-card {
     background: var(--surface);
     padding: 2.5rem;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.35s ease, box-shadow 0.35s ease;
     position: relative;
     overflow: hidden;
   }
@@ -280,7 +356,11 @@
     transition: opacity 0.3s;
   }
 
-  .service-card:hover { background: #0f1829; }
+  .service-card:hover {
+    background: #0f1829;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
   .service-card:hover::before { opacity: 1; }
 
   .service-icon {
@@ -355,23 +435,380 @@
 
   .step p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
 
+  .step {
+    transition: border-color 0.3s ease, transform 0.35s ease;
+  }
+  .step:hover {
+    border-left-color: rgba(79,142,255,0.45);
+    transform: translateX(4px);
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    padding: 4rem 5vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cta-inner {
+    background: linear-gradient(135deg, rgba(79,142,255,0.12) 0%, rgba(0,229,195,0.06) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+  }
+  .cta-inner:hover {
+    box-shadow: 0 8px 40px rgba(79,142,255,0.12);
+    transform: translateY(-2px);
+  }
+
+  .cta-inner h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .cta-inner p { color: var(--muted); font-size: 0.9rem; max-width: 420px; }
+
+  /* PRICING */
+  .pricing {
+    padding: 7rem 5vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .pricing-intro {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 560px;
+    margin: -2rem 0 2.5rem;
+    line-height: 1.6;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .pricing-card:hover {
+    border-color: rgba(79,142,255,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  }
+
+  .pricing-card.featured {
+    border-color: rgba(79,142,255,0.35);
+    box-shadow: 0 0 40px rgba(79,142,255,0.08);
+  }
+
+  .pricing-card.open {
+    border-color: rgba(79,142,255,0.5);
+  }
+
+  .pricing-header {
+    padding: 2rem 2rem 1.25rem;
+    position: relative;
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    background: rgba(0,229,195,0.1);
+    border: 1px solid rgba(0,229,195,0.25);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+  }
+
+  .pricing-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.45rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .pricing-price span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .pricing-price .amount {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pricing-teaser {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 0;
+    line-height: 1.55;
+  }
+
+  .pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 1.25rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+  }
+
+  .pricing-toggle-icon {
+    transition: transform 0.35s ease;
+    font-size: 0.7rem;
+  }
+  .pricing-card.open .pricing-toggle-icon { transform: rotate(180deg); }
+
+  .pricing-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease, opacity 0.35s ease;
+    opacity: 0;
+  }
+  .pricing-card.open .pricing-details {
+    max-height: 560px;
+    opacity: 1;
+  }
+
+  .pricing-details-inner {
+    padding: 0 2rem 2rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .pricing-details h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+  .pricing-details h4:first-child { margin-top: 0; }
+
+  .pricing-details ul {
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+  .pricing-details ul li {
+    padding-left: 1.1rem;
+    position: relative;
+    margin-bottom: 0.35rem;
+  }
+  .pricing-details ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 0.75rem;
+  }
+
+  .pricing-details p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 7rem 5vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.35s ease, border-color 0.3s ease, box-shadow 0.35s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(79,142,255,0.3);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+
+  .stars {
+    color: #f5c542;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-text {
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-style: normal;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(79,142,255,0.15);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .testimonial-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .testimonial-role {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 5rem 5vw 7rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-list { margin-top: 2rem; }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: var(--surface);
+    transition: border-color 0.3s ease;
+  }
+  .faq-item:hover { border-color: rgba(79,142,255,0.3); }
+  .faq-item.open { border-color: rgba(79,142,255,0.4); }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .faq-question:hover { color: var(--accent); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    color: var(--accent);
+    transition: transform 0.35s ease;
+    font-size: 0.75rem;
+  }
+  .faq-item.open .faq-icon { transform: rotate(180deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 280px;
+    opacity: 1;
+  }
+
+  .faq-answer p {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
   /* CONTACT */
   .contact {
     padding: 7rem 5vw;
-    max-width: 700px;
+    max-width: 640px;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .contact-sub {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .contact-box {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 3.5rem;
-    margin-top: 2.5rem;
+    padding: 2.5rem;
+    margin-top: 1rem;
     position: relative;
     overflow: hidden;
+    text-align: left;
+    transition: box-shadow 0.35s ease;
   }
+  .contact-box:hover { box-shadow: 0 12px 48px rgba(79,142,255,0.08); }
 
   .contact-box::before {
     content: '';
@@ -381,10 +818,101 @@
     pointer-events: none;
   }
 
-  .contact-box p {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.02em;
+  }
+  .form-group label .optional {
+    font-weight: 400;
     color: var(--muted);
-    margin-bottom: 2rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(5,8,16,0.6);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.92rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: rgba(79,142,255,0.5);
+    box-shadow: 0 0 0 3px rgba(79,142,255,0.12);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--muted); opacity: 0.7; }
+
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7a99' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .form-group select option { background: var(--surface); color: var(--text); }
+
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
     font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s;
+    box-shadow: 0 0 30px rgba(79,142,255,0.25);
+  }
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(79,142,255,0.4);
+  }
+
+  .contact-alt {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .contact-alt p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
   }
 
   .contact-email {
@@ -437,12 +965,64 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
 
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .hero-badge, h1, .hero-sub, .hero-actions, .hero-trust, .hero-proof, .hero-scroll, .stats { animation: none; transition: none; }
+    .hero-scroll-arrow { animation: none; }
+    .reveal { opacity: 1; transform: none; }
+    .service-card:hover, .pricing-card:hover, .testimonial-card:hover, .step:hover, .cta-inner:hover { transform: none; }
+  }
+
   /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 1rem 5vw 1.25rem;
+      background: rgba(5,8,16,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-child { border-bottom: none; }
+    .nav-links .nav-cta {
+      text-align: center;
+      margin-top: 0.5rem;
+      padding: 0.75rem 1.2rem !important;
+    }
+    .nav-toggle { display: block; }
+    nav { flex-wrap: wrap; position: relative; }
+    .cta-inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+    .cta-inner .btn-primary { width: 100%; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 600px) {
-    .nav-links { display: none; }
     .stats { gap: 2rem; }
-    .contact-box { padding: 2rem 1.5rem; }
+    .contact-box { padding: 1.75rem 1.25rem; }
     h1 { font-size: 1.75rem; padding: 0 0.5rem; }
+    .pricing-header, .pricing-toggle, .pricing-details-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .services, .pricing, .testimonials { padding: 5rem 5vw; }
+    .hero-actions { flex-direction: column; width: 100%; max-width: 280px; }
+    .hero-actions a { width: 100%; text-align: center; }
+    .hero-trust, .hero-proof { font-size: 0.8rem; padding: 0 0.5rem; }
+    .stats { gap: 2rem; margin-top: 2.5rem; }
+    .stat-num { font-size: 1.65rem; }
+    .hero-scroll { margin-top: 2rem; }
   }
 </style>
 </head>
@@ -453,35 +1033,46 @@
 
 <nav>
   <a href="#" class="logo">Visib<span>.</span>ly</a>
-  <div class="nav-links">
+  <button type="button" class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <div class="nav-links" id="nav-links">
     <a href="#leistungen">Leistungen</a>
+    <a href="#pakete">Pakete</a>
     <a href="#ablauf">Ablauf</a>
+    <a href="#faq">FAQ</a>
     <a href="#kontakt" class="nav-cta">Kontakt</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">Digitale Präsenz für Unternehmen</div>
+  <div class="hero-badge">Shop · Texte · Logos · Social Media — remote</div>
   <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
-  <p class="hero-sub">Professionelle Online-Shops, überzeugende Texte und wirkungsvoller Social-Media-Content – alles aus einer Hand, komplett remote.</p>
+  <p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
   <div class="hero-actions">
     <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
-    <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+    <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
   </div>
+  <p class="hero-trust"><strong>Pakete ab 29 €</strong> · Antwort innerhalb von 24h · unverbindlich</p>
+  <p class="hero-proof">
+    <a href="#bewertungen"><span class="proof-stars" aria-hidden="true">★★★★★</span>Vertrauen von Unternehmerinnen & Unternehmern</a>
+  </p>
   <div class="stats">
     <div class="stat-item">
+      <div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
+      <div class="stat-label">Einstiegspaket</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24<span>h</span></div>
+      <div class="stat-label">Antwortzeit</div>
+    </div>
+    <div class="stat-item">
       <div class="stat-num">100<span>%</span></div>
-      <div class="stat-label">Remote & digital</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Kernleistungen</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Unnötige Meetings</div>
+      <div class="stat-label">Schriftlich & remote</div>
     </div>
   </div>
+  <a href="#leistungen" class="hero-scroll" aria-label="Zu den Leistungen scrollen">
+    <span>Leistungen</span>
+    <span class="hero-scroll-arrow" aria-hidden="true">↓</span>
+  </a>
 </section>
 
 <section class="services" id="leistungen">
@@ -506,6 +1097,132 @@
       <p>Fertige Posts, Captions und Content-Strategien für Ihre Social-Media-Kanäle. Sie veröffentlichen – ich liefere den Inhalt.</p>
       <span class="service-tag">→ Instagram, TikTok & mehr</span>
     </div>
+    <div class="service-card">
+      <div class="service-icon">✦</div>
+      <h3>Logo & Design</h3>
+      <p>Neue Logos von Grund auf oder die Überarbeitung Ihres bestehenden Auftritts – klar, wiedererkennbar und passend zu Ihrer Marke.</p>
+      <span class="service-tag">→ Entwurf, Revision & Export</span>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pakete">
+  <p class="section-label reveal">Pakete</p>
+  <h2 class="reveal">Preise & Pakete.</h2>
+  <p class="pricing-intro reveal">Jedes Projekt ist anders – deshalb starten alle Preise flexibel mit „ab“. Klicken Sie auf ein Paket für Details zu Inhalten, Vorteilen und individuellen Anpassungen.</p>
+  <div class="pricing-grid">
+    <article class="pricing-card reveal" data-package="basic" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Basic</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">29€</span></div>
+        <p class="pricing-teaser">Ideal für kleine Aufgaben, erste Online-Schritte oder punktuelle Unterstützung.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Kurze Textoptimierung oder Social-Media-Post (1–3 Stück)</li>
+            <li>Einfache Formatierung & Korrekturlesen</li>
+            <li>Eine Feedback-Runde inklusive</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Schneller Einstieg ohne großes Budget – Sie testen die Zusammenarbeit risikoarm und erhalten sofort nutzbaren Output.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Klar abgegrenzter Umfang, effiziente Remote-Arbeit ohne Overhead – Sie zahlen nur für das, was Sie wirklich brauchen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Scope und Lieferumfang passen wir vor Start gemeinsam an – vom Einzeltext bis zu kleinen Content-Serien.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pricing-card reveal reveal-delay-1" data-package="design" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Design</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">49€</span></div>
+        <p class="pricing-teaser">Neues Logo oder Refresh Ihres bestehenden Logos – professionell, markengerecht und einsatzbereit.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Logo-Neuentwurf oder Überarbeitung eines bestehenden Logos</li>
+            <li>2–3 Designentwürfe zur Auswahl</li>
+            <li>Export für Web & Print (PNG, SVG – nach Absprache)</li>
+            <li>Eine Korrektur-Runde inklusive</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Ein einheitlicher Auftritt ohne teure Design-Agentur – Ihre Marke wirkt von Anfang an professionell auf Website, Shop und Social Media.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Fokussierter Logo-Umfang statt kompletter Corporate Identity – Sie erhalten genau das, was kleine Unternehmen und Selbstständige wirklich brauchen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Stil, Farben und Format richten wir nach Ihrer Branche und Ihren Wünschen aus – vom Minimal-Logo bis zur Modernisierung Ihres Bestands.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pricing-card featured reveal reveal-delay-2" data-package="standard" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <span class="pricing-badge">Beliebt</span>
+        <h3>Standard</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">79€</span></div>
+        <p class="pricing-teaser">Der Sweet Spot für Website-Texte, Shop-Inhalte oder einen kompletten Social-Media-Monat.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Mehrseitige Texte, Produktbeschreibungen oder Landingpage-Copy</li>
+            <li>Shop-Einrichtungshilfe oder Content-Paket (10+ Posts)</li>
+            <li>Struktur, SEO-Basics & zwei Feedback-Runden</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Professionelle Qualität zum fairen Festpreis-Rahmen – weniger Zeitaufwand für Sie, mehr Wirkung online.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Durch erprobte Workflows und Fokus auf Kernleistungen entsteht hochwertiger Output ohne Agentur-Aufschlag.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Leistungen, Kanäle und Lieferzeiten stimmen wir auf Ihre Branche und Zielgruppe ab – modular erweiterbar.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pricing-card reveal reveal-delay-3" data-package="premium" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Premium</h3>
+        <div class="pricing-price"><span class="amount" style="-webkit-text-fill-color:var(--text);background:none;">Individuelle Anfrage</span></div>
+        <p class="pricing-teaser">Komplette Shop-Projekte, umfassende Content-Strategien oder langfristige Betreuung.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Vollständige Online-Shop-Erstellung (Shopify / WooCommerce)</li>
+            <li>Ganzheitliche Text- & Content-Strategie über mehrere Kanäle</li>
+            <li>Priorisierte Betreuung, Revisionen & optional laufende Pflege</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Ein Ansprechpartner für alles Digitale – von der Idee bis live, ohne Koordinationschaos zwischen mehreren Dienstleistern.</p>
+          <h4>Warum fair kalkuliert?</h4>
+          <p>Sie erhalten ein maßgeschneidertes Angebot statt Pauschalpreis – jede Position ist nachvollziehbar und projektbezogen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Umfang, Timeline und Budget definieren wir gemeinsam – inklusive optionaler Folgepakete nach Go-live.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="pricing-intro reveal" style="margin-top:2rem;margin-bottom:0;font-size:0.85rem;">Alle Preise verstehen sich als Richtwerte. Nach Ihrer Anfrage erhalten Sie ein verbindliches, auf Sie zugeschnittenes Angebot.</p>
+</section>
+
+<section class="cta-band">
+  <div class="cta-inner reveal">
+    <div>
+      <h3>Passendes Paket gefunden?</h3>
+      <p>Transparente Preise ab – jedes Projekt wird individuell auf Ihre Ziele abgestimmt.</p>
+    </div>
+    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
   </div>
 </section>
 
@@ -515,8 +1232,8 @@
   <div class="steps">
     <div class="step reveal">
       <div class="step-num">01</div>
-      <h3>Anfrage per E-Mail</h3>
-      <p>Sie schreiben mir kurz was Sie brauchen. Kein Anruf, kein Meeting – alles läuft schriftlich ab.</p>
+      <h3>Anfrage über Formular</h3>
+      <p>Sie füllen das Kontaktformular aus oder schreiben per E-Mail – kein Anruf, kein Meeting, alles schriftlich.</p>
     </div>
     <div class="step reveal">
       <div class="step-num">02</div>
@@ -536,34 +1253,253 @@
   </div>
 </section>
 
+<section class="testimonials" id="bewertungen">
+  <p class="section-label reveal">Kundenstimmen</p>
+  <h2 class="reveal">Was Kunden sagen.</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Unser Shopify-Shop war in wenigen Tagen online. Die Produkttexte klingen professionell – und ich musste kein einziges Meeting dafür einplanen. Genau das, was ich als Einzelunternehmerin brauchte.“</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SK</div>
+        <div>
+          <div class="testimonial-name">Sarah K.</div>
+          <div class="testimonial-role">Handmade-Shop, München</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Die Landingpage-Texte haben unsere Anfragen spürbar erhöht. Kommunikation lief ausschließlich per E-Mail, Antworten kamen schnell und auf den Punkt. Sehr unkompliziert.“</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MT</div>
+        <div>
+          <div class="testimonial-name">Markus T.</div>
+          <div class="testimonial-role">IT-Dienstleister, Hamburg</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Ein Monat Social-Media-Content, fertig zum Posten – inklusive Captions, die wirklich zu unserer Marke passen. Preis-Leistung für ein kleines Team unschlagbar.“</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">LB</div>
+        <div>
+          <div class="testimonial-name">Lisa B.</div>
+          <div class="testimonial-role">Café & Catering, Berlin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-inner reveal">
+    <div>
+      <h3>Bereit für Ihr nächstes Projekt?</h3>
+      <p>Antwort innerhalb von 24 Stunden – kostenlos und unverbindlich.</p>
+    </div>
+    <a href="#kontakt" class="btn-primary">Kostenlos anfragen</a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="reveal">Häufige Fragen.</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Warum stehen bei den Paketen nur „ab“-Preise?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Jedes Projekt hat unterschiedlichen Umfang – von einem kurzen Text bis zum kompletten Shop. Die „ab“-Preise geben Orientierung; nach Ihrer Anfrage erhalten Sie ein festes, transparentes Angebot ohne versteckte Kosten.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Muss ich telefonieren oder an Meetings teilnehmen?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Nein. Die gesamte Abstimmung läuft per E-Mail oder über das Kontaktformular – schnell, dokumentiert und ohne Termindruck. Das spart Ihnen und mir Zeit.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Wie schnell bekomme ich eine Antwort?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>In der Regel innerhalb von 24 Stunden an Werktagen. Bei dringenden Projekten vermerken Sie das einfach im Formular – ich priorisiere dann entsprechend.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Kann ich Leistungen aus verschiedenen Paketen kombinieren?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Ja. Shop, Texte und Social Media lassen sich flexibel kombinieren. Beschreiben Sie Ihr Vorhaben im Formular – ich schlage das passende Paket oder eine individuelle Lösung vor.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Welche Zahlungsmethoden gibt es?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Die Details klären wir im Angebot – üblich sind Rechnung mit Überweisung oder vereinbarte Teilzahlungen bei größeren Projekten. Alles wird vor Start schriftlich festgehalten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="kontakt">
   <p class="section-label reveal">Kontakt</p>
   <h2 class="reveal">Bereit loszulegen?</h2>
+  <p class="contact-sub reveal">Füllen Sie das Formular aus – ich melde mich innerhalb von 24 Stunden mit einem passenden Angebot.</p>
   <div class="contact-box reveal">
-    <p>Schreiben Sie mir einfach eine kurze E-Mail – kein Anruf nötig, kein Formular, keine Warteschleife. Ich antworte innerhalb von 24 Stunden.</p>
-    <a href="mailto:visib.ly@outlook.com" class="contact-email">
-      ✉️ visib.ly@outlook.com
-    </a>
-    <p class="contact-note">Komplett remote · Kein Meeting · Antwort innerhalb 24h</p>
+    <form id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Ihr Name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" required placeholder="ihre@email.de" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="company">Unternehmen <span class="optional">(optional)</span></label>
+        <input type="text" id="company" name="company" placeholder="Firmenname" autocomplete="organization">
+      </div>
+      <div class="form-group">
+        <label for="service">Gewünschte Leistung *</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Bitte wählen …</option>
+          <option value="Online-Shop">Online-Shop Erstellung</option>
+          <option value="Texte & Copywriting">Texte & Copywriting</option>
+          <option value="Social Media">Social Media Content</option>
+          <option value="Logo & Design">Logo & Design</option>
+          <option value="Kombination">Kombination mehrerer Leistungen</option>
+          <option value="Sonstiges">Sonstiges / Beratung</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="project">Beschreibung des Projekts *</label>
+        <textarea id="project" name="project" required placeholder="Was möchten Sie erreichen? Welche Ziele, Fristen oder Besonderheiten gibt es?"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="" disabled selected>Budget-Rahmen wählen …</option>
+          <option value="unter 50€">unter 50 €</option>
+          <option value="50–100€">50 – 100 €</option>
+          <option value="100–250€">100 – 250 €</option>
+          <option value="250–500€">250 – 500 €</option>
+          <option value="über 500€">über 500 €</option>
+          <option value="noch unklar">Noch unklar / Beratung gewünscht</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Anfrage absenden</button>
+    </form>
+    <div class="contact-alt">
+      <p>Oder direkt per E-Mail:</p>
+      <a href="mailto:visib.ly@outlook.com" class="contact-email">
+        ✉️ visib.ly@outlook.com
+      </a>
+      <p class="contact-note">Komplett remote · Kein Meeting · Antwort innerhalb 24h</p>
+    </div>
   </div>
 </section>
 
 <footer>
   <a href="#" class="logo" style="font-size:1rem;">Visib<span>.</span>ly</a>
-  <p>© 2026 Visibly · Digitale Präsenz für Unternehmen</p>
+  <p>© 2026 Visibly · <a href="#pakete" style="color:var(--muted);text-decoration:none;">Pakete</a> · <a href="#faq" style="color:var(--muted);text-decoration:none;">FAQ</a> · <a href="#kontakt" style="color:var(--muted);text-decoration:none;">Kontakt</a></p>
 </footer>
 
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+    entries.forEach((e) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        const delay = e.target.classList.contains('reveal-delay-1') ? 80
+          : e.target.classList.contains('reveal-delay-2') ? 160
+          : e.target.classList.contains('reveal-delay-3') ? 240 : 0;
+        setTimeout(() => e.target.classList.add('visible'), delay);
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
+    });
+  });
+
+  document.querySelectorAll('.pricing-card').forEach(card => {
+    const toggle = () => {
+      const isOpen = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', isOpen);
+      card.querySelector('.pricing-toggle span').textContent = isOpen ? 'Details ausblenden' : 'Details anzeigen';
+    };
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      toggle();
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const company = form.company.value.trim();
+    const service = form.service.value;
+    const project = form.project.value.trim();
+    const budget = form.budget.value;
+    const subject = encodeURIComponent('Projektanfrage – ' + service);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'E-Mail: ' + email + '\n' +
+      (company ? 'Unternehmen: ' + company + '\n' : '') +
+      'Leistung: ' + service + '\n' +
+      'Budget: ' + budget + '\n\n' +
+      'Projektbeschreibung:\n' + project
+    );
+    window.location.href = 'mailto:visib.ly@outlook.com?subject=' + subject + '&body=' + body;
+  });
 </script>
 
 </body>
