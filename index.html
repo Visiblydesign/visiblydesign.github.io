@@ -108,9 +108,9 @@
 
   .hero-sub { margin-top: 1.8rem; color: var(--muted); font-size: 1.08rem; max-width: 560px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
   .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-trust { margin-top: 0.32rem; font-size: 0.85rem; color: var(--muted); letter-spacing: 0.02em; animation: fadeUp 0.6s 0.35s ease both; }
+  .hero-trust { margin-top: 2.8rem !important; font-size: 0.85rem; color: var(--muted); letter-spacing: 0.02em; animation: fadeUp 0.6s 0.35s ease both;  text-align: center; }
   .hero-trust strong { color: var(--text); font-weight: 600; }
-  .hero-proof { margin-top: 3.8rem; font-size: 0.88rem; animation: fadeUp 0.6s 0.38s ease both; }
+  .hero-proof { margin-top: 3.8rem; font-size: 0.88rem; animation: fadeUp 0.6s 0.38s ease both;  text-align: center; }
   .hero-proof a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .hero-proof a:hover { color: var(--accent); }
   .hero-proof .proof-stars { color: #f5c542; letter-spacing: 0.1em; margin-right: 0.35rem; }
@@ -317,7 +317,7 @@
 
     .hero-sub {
       font-size: 1rem !important;
-      margin-top: 2.5rem !important;
+      margin-top: 3.4rem !important;
       line-height: 1.55 !important;
     }
 
@@ -325,13 +325,13 @@
       flex-direction: column !important;
       width: 100% !important;
       max-width: 280px !important;
-      margin-top: 2.5rem !important;
+      margin-top: 3.4rem !important;
       gap: 0.75rem !important;
     }
     .hero-actions a { width: 100% !important; text-align: center !important; }
 
-    .hero-trust { margin-top: 0.32rem; font-size: 0.82rem !important; }
-    .hero-proof { margin-top: 6.5rem !important; font-size: 0.82rem !important; }
+    .hero-trust { margin-top: 2.8rem !important; font-size: 0.82rem !important; }
+    .hero-proof { margin-top: 0.12rem !important; font-size: 0.82rem !important; }
     .stats { gap: 1.25rem 1.75rem !important; margin-top: 2rem !important; padding-top: 1.75rem !important; }
 
     .stat-num { font-size: 1.5rem !important; }
@@ -425,6 +425,58 @@
     }
   }
 
+
+  
+
+
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  .tiktok-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(0,229,195,0.35), transparent 28%),
+      radial-gradient(circle at 70% 65%, rgba(255,45,85,0.28), transparent 30%),
+      linear-gradient(135deg, #050810 0%, #11182b 100%);
+  }
+
+  .tiktok-card::before,
+  .tiktok-card::after {
+    display: none;
+  }
+
+  .tiktok-symbol {
+    width: 86px;
+    height: 86px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,8,16,0.72);
+    border: 1px solid rgba(232,237,248,0.16);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: -3px 0 #00e5c3, 3px 0 #ff2d55;
+  }
+
+  .tiktok-label {
+    margin-top: 1rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
 </style>
 </head>
 <body>
@@ -453,10 +505,10 @@
     <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
     <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
   </div>
+  <p class="hero-trust"><strong>Pakete ab 29 €</strong> · Antwort innerhalb von 24h · unverbindlich</p>
   <p class="hero-proof">
     <a href="#bewertungen"><span class="proof-stars" aria-hidden="true">★★★★★</span>Vertrauen von Unternehmerinnen & Unternehmern</a>
   </p>
-  <p class="hero-trust"><strong>Pakete ab 29 €</strong> · Antwort innerhalb von 24h · unverbindlich</p>
   <div class="stats">
     <div class="stat-item">
       <div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
@@ -694,6 +746,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="cta-band">
   <div class="cta-inner reveal">
