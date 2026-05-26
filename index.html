@@ -108,9 +108,9 @@
 
   .hero-sub { margin-top: 1.8rem; color: var(--muted); font-size: 1.08rem; max-width: 560px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
   .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-trust { margin-top: 2.8rem !important; font-size: 0.85rem; color: var(--muted); letter-spacing: 0.02em; animation: fadeUp 0.6s 0.35s ease both;  text-align: center; }
+  
   .hero-trust strong { color: var(--text); font-weight: 600; }
-  .hero-proof { margin-top: 3.8rem; font-size: 0.88rem; animation: fadeUp 0.6s 0.38s ease both;  text-align: center; }
+  
   .hero-proof a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .hero-proof a:hover { color: var(--accent); }
   .hero-proof .proof-stars { color: #f5c542; letter-spacing: 0.1em; margin-right: 0.35rem; }
@@ -330,8 +330,8 @@
     }
     .hero-actions a { width: 100% !important; text-align: center !important; }
 
-    .hero-trust { margin-top: 2.8rem !important; font-size: 0.82rem !important; }
-    .hero-proof { margin-top: 0.12rem !important; font-size: 0.82rem !important; }
+    
+    
     .stats { gap: 1.25rem 1.75rem !important; margin-top: 2rem !important; padding-top: 1.75rem !important; }
 
     .stat-num { font-size: 1.5rem !important; }
@@ -485,26 +485,9 @@
       margin-bottom: 0 !important;
     }
 
-    .hero-trust {
-      display: block !important;
-      width: 100% !important;
-      max-width: 320px !important;
-      margin: 2.35rem auto 0 !important;
-      text-align: center !important;
-      font-size: 0.82rem !important;
-      line-height: 1.55 !important;
-      color: var(--muted) !important;
-    }
+    
 
-    .hero-proof {
-      display: block !important;
-      width: 100% !important;
-      max-width: 320px !important;
-      margin: 0.45rem auto 0 !important;
-      text-align: center !important;
-      font-size: 0.82rem !important;
-      line-height: 1.45 !important;
-    }
+    
 
     .hero-proof a {
       display: inline-flex !important;
@@ -518,6 +501,41 @@
     .hero-proof .proof-stars {
       margin-right: 0 !important;
       letter-spacing: 0.08em !important;
+    }
+  }
+
+
+  
+  /* FINAL RELIABLE MOBILE HERO INFO SPACING */
+  .hero-info { text-align: center; padding-top: 2.7rem; }
+
+  @media (max-width: 640px) {
+    .hero-info { margin-top: 0 !important; padding-top: 2.7rem !important;
+      text-align: center !important;
+    }
+
+    .hero-info .hero-trust {
+      margin: 0 !important;
+      text-align: center !important;
+      font-size: 0.82rem !important;
+      line-height: 1.55 !important;
+      color: var(--muted) !important;
+    }
+
+    .hero-info .hero-proof {
+      margin: 0.35rem 0 0 !important;
+      text-align: center !important;
+      font-size: 0.82rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .hero-info .hero-proof a {
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 0.35rem !important;
+      flex-wrap: wrap !important;
+      text-align: center !important;
     }
   }
 
@@ -549,10 +567,12 @@
     <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
     <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
   </div>
-  <p class="hero-trust"><strong>Pakete ab 29 €</strong> · Antwort innerhalb von 24h · unverbindlich</p>
-  <p class="hero-proof">
-    <a href="#bewertungen"><span class="proof-stars" aria-hidden="true">★★★★★</span>Vertrauen von Unternehmerinnen & Unternehmern</a>
-  </p>
+  <div class="hero-info">
+    <p class="hero-trust"><strong>Pakete ab 29 €</strong> · Antwort innerhalb von 24h · unverbindlich</p>
+    <p class="hero-proof">
+      <a href="#bewertungen"><span class="proof-stars" aria-hidden="true">★★★★★</span>Vertrauen von Unternehmerinnen & Unternehmern</a>
+    </p>
+  </div>
   <div class="stats">
     <div class="stat-item">
       <div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
