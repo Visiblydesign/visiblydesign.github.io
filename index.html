@@ -359,6 +359,72 @@
     .stats { gap: 1rem 1.25rem; }
     .stat-num { font-size: 1.35rem; }
   }
+
+  /* Datenschutz nur bei Klick anzeigen */
+  .privacy-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    overflow-y: auto;
+    background: var(--bg);
+    padding: 7rem 5vw 4rem;
+  }
+
+  .privacy-page:target {
+    display: block;
+  }
+
+  .privacy-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  }
+
+  .privacy-close {
+    display: inline-flex;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .privacy-inner h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-inner h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .privacy-inner p,
+  .privacy-inner li {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .privacy-inner ul {
+    margin-left: 1.2rem;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .privacy-page {
+      padding: 5.5rem 5vw 3rem;
+    }
+
+    .privacy-inner {
+      padding: 1.5rem;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -750,74 +816,46 @@
   </div>
 </section>
 
-<section class="faq" id="datenschutz">
-  <p class="section-label reveal">Rechtliches</p>
-  <h2 class="reveal">Datenschutz.</h2>
-  <div class="faq-list">
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Allgemeine Hinweise
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Vorschriften. Beim Besuch können technische Daten wie Browsertyp, Betriebssystem, Uhrzeit des Zugriffs oder IP-Adresse automatisch durch den Hosting-Anbieter verarbeitet werden.</p>
-      </div>
-    </div>
 
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Verantwortliche Stelle
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Verantwortlich für die Datenverarbeitung auf dieser Website: Visibly · E-Mail: visib.ly@outlook.com</p>
-      </div>
-    </div>
+<section class="privacy-page" id="datenschutz">
+  <div class="privacy-inner">
+    <a href="#" class="privacy-close">← Zurück zur Website</a>
+    <p class="section-label">Rechtliches</p>
+    <h2>Datenschutz.</h2>
 
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Kontaktaufnahme
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die übermittelten Daten werden nicht an Dritte weitergegeben.</p>
-      </div>
-    </div>
+    <h3>1. Allgemeine Hinweise</h3>
+    <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Vorschriften.</p>
+    <p>Beim Besuch dieser Website können technische Daten wie Browsertyp, Betriebssystem, Uhrzeit des Zugriffs oder IP-Adresse automatisch durch den Hosting-Anbieter verarbeitet werden.</p>
 
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Hosting & technische Daten
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Diese Website wird bei einem externen Hosting-Anbieter betrieben. Dabei können Server-Logfiles gespeichert werden, zum Beispiel IP-Adresse, Browserinformationen, Datum und Uhrzeit des Zugriffs sowie aufgerufene Seiten. Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website.</p>
-      </div>
-    </div>
+    <h3>2. Verantwortliche Stelle</h3>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
+    <p><strong>Visibly</strong><br>E-Mail: visib.ly@outlook.com</p>
 
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Externe Schriftarten
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Laden der Website kann eine Verbindung zu Servern von Google hergestellt werden. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
-      </div>
-    </div>
+    <h3>3. Kontaktaufnahme</h3>
+    <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die übermittelten Daten werden nicht an Dritte weitergegeben.</p>
 
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Ihre Rechte
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Zur Ausübung genügt eine formlose E-Mail.</p>
-      </div>
-    </div>
+    <h3>4. Hosting</h3>
+    <p>Diese Website wird bei einem externen Hosting-Anbieter betrieben. Dabei können Server-Logfiles automatisch gespeichert werden.</p>
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Browserinformationen</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>aufgerufene Seiten</li>
+    </ul>
+    <p>Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
+
+    <h3>5. Externe Schriftarten</h3>
+    <p>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Laden der Website kann eine Verbindung zu Servern von Google hergestellt werden.</p>
+    <p>Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+
+    <h3>6. Ihre Rechte</h3>
+    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Zur Ausübung genügt eine formlose E-Mail.</p>
+
+    <h3>7. Änderungen</h3>
+    <p>Diese Datenschutzerklärung kann bei technischen oder rechtlichen Änderungen angepasst werden.</p>
+    <p>Stand: 2026</p>
   </div>
 </section>
-
-
-
 
 <footer>
   <a href="#" class="logo" style="font-size:1rem;">Visib<span>.</span>ly</a>
