@@ -653,6 +653,44 @@
     }
   }
 
+
+  .mobile-proof {
+    margin-top: 1.5rem !important;
+    text-align: center;
+  }
+
+  .mobile-proof a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-proof a:hover {
+    color: var(--accent);
+  }
+
+  .mobile-proof .proof-stars {
+    color: #f5c542;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-proof {
+      margin-top: 1.35rem !important;
+    }
+
+    .mobile-proof a {
+      font-size: 0.78rem !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 1.45;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -696,10 +734,12 @@
     <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
   </div>
 
-  <a href="#leistungen" class="hero-scroll" aria-label="Zu den Leistungen scrollen">
-    <span>Leistungen</span>
-    <span class="hero-scroll-arrow" aria-hidden="true">↓</span>
-  </a>
+  <div class="hero-proof mobile-proof">
+    <a href="#bewertungen">
+      <span class="proof-stars" aria-hidden="true">★★★★★</span>
+      Vertrauen von Unternehmerinnen & Unternehmern
+    </a>
+  </div>
 </section>
 
 <section class="services" id="leistungen">
