@@ -294,151 +294,70 @@
     .form-row { grid-template-columns: 1fr; }
   }
 
-  /* MOBILE FIX – Optimierte Hero-Abstände & bessere Mobile-Ansicht */
+  /* MOBILE FIX – Badge näher an Headline, Karten mit mehr Abstand */
   @media (max-width: 1024px) {
     .hero {
       min-height: auto !important;
       justify-content: flex-start;
-      padding: 3.25rem 5vw 2rem !important;
+      padding: 1.8rem 5vw 2rem !important;
     }
 
     .hero-badge {
       font-size: 0.78rem !important;
       padding: 0.4rem 0.85rem !important;
-      margin-top: 1rem !important;
-      margin-bottom: 2rem !important;
+      margin-bottom: 3rem !important;
     }
 
     h1 {
       font-size: 2rem !important;
       padding: 0 0.25rem !important;
-      line-height: 1.3 !important;
-      margin-bottom: 0.8rem !important;
+      line-height: 1.45 !important;
+      margin-bottom: 0 !important;
     }
 
     .hero-sub {
       font-size: 1.05rem !important;
-      margin-top: 1rem !important;
-      line-height: 1.7 !important;
-      max-width: 92% !important;
+      margin-top: 2.5rem !important;
+      line-height: 1.55 !important;
     }
 
     .hero-actions {
       flex-direction: column !important;
       width: 100% !important;
       max-width: 280px !important;
-      margin-top: 2.2rem !important;
-      gap: 0.9rem !important;
+      margin-top: 2.5rem !important;
+      gap: 0.75rem !important;
     }
+    .hero-actions a { width: 100% !important; text-align: center !important; }
 
-    .hero-actions a {
-      width: 100% !important;
-      text-align: center !important;
-    }
+    .hero-trust { margin-top: 2rem !important; font-size: 0.82rem !important; }
+    .hero-proof { margin-top: 1.25rem !important; font-size: 0.82rem !important; }
+    .stats { gap: 1.25rem 1.75rem !important; margin-top: 2rem !important; padding-top: 1.75rem !important; }
 
-    .hero-trust {
-      margin-top: 2rem !important;
-      font-size: 0.82rem !important;
-      line-height: 1.5 !important;
-    }
-
-    .hero-proof {
-      margin-top: 1rem !important;
-      font-size: 0.82rem !important;
-    }
-
-    .stats {
-      gap: 1.4rem 1.8rem !important;
-      margin-top: 2.2rem !important;
-      padding-top: 2rem !important;
-    }
-
-    .stat-item {
-      min-width: 90px;
-    }
-
-    .stat-num {
-      font-size: 1.45rem !important;
-    }
-
-    .stat-label {
-      font-size: 0.68rem !important;
-      line-height: 1.4 !important;
-    }
-
-    .hero-scroll {
-      margin-top: 1.5rem !important;
-    }
+    .stat-num { font-size: 1.5rem !important; }
+    .stat-label { font-size: 0.68rem !important; }
+    .hero-scroll { margin-top: 1.25rem !important; }
 
     .services-grid {
       gap: 1rem !important;
     }
 
-    .contact-box {
-      padding: 1.75rem 1.25rem;
-    }
-
-    .pricing-header,
-    .pricing-toggle,
-    .pricing-details-inner {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
-    }
-
-    .services,
-    .pricing,
-    .testimonials,
-    .process,
-    .faq {
-      padding: 4rem 5vw;
-    }
-
-    .contact {
-      padding: 4rem 5vw;
-    }
-
-    .cta-band {
-      padding: 2.5rem 5vw;
-    }
-
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 1.65rem;
-    }
-
-    nav {
-      padding: 0.9rem 5vw;
-    }
+    .contact-box { padding: 1.75rem 1.25rem; }
+    .pricing-header, .pricing-toggle, .pricing-details-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .services, .pricing, .testimonials, .process, .faq { padding: 4rem 5vw; }
+    .contact { padding: 4rem 5vw; }
+    .cta-band { padding: 2.5rem 5vw; }
+    h2 { margin-bottom: 2rem; font-size: 1.65rem; }
+    nav { padding: 0.9rem 5vw; }
   }
 
   @media (max-width: 380px) {
-    .hero {
-      padding-top: 2.85rem !important;
-    }
-
-    .hero-badge {
-      font-size: 0.72rem;
-      padding: 0.35rem 0.7rem;
-      margin-bottom: 1rem !important;
-    }
-
-    h1 {
-      font-size: 1.85rem;
-      line-height: 1.28 !important;
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      margin-top: 0.9rem !important;
-    }
-
-    .stats {
-      gap: 1rem 1.25rem;
-    }
-
-    .stat-num {
-      font-size: 1.35rem;
-    }
+    .hero { padding-top: 2.85rem !important; }
+    .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; margin-bottom: 0.5rem !important; }
+    h1 { font-size: 1.85rem; }
+    .hero-sub { font-size: 1rem; }
+    .stats { gap: 1rem 1.25rem; }
+    .stat-num { font-size: 1.35rem; }
   }
 </style>
 </head>
@@ -460,8 +379,8 @@
 </nav>
 
 <section class="hero">
-  <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
   <div class="hero-badge">Shop · Texte · Logos · Social Media</div>
+  <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
   <p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
   <div class="hero-actions">
     <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
@@ -835,6 +754,15 @@
 </footer>
 
 <script>
+
+  // Immer oben starten nach Seiten-Reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
