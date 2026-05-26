@@ -9,785 +9,785 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon-32x32.png">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
---bg: #050810;
---surface: #0c1120;
---accent: #4f8eff;
---accent2: #00e5c3;
---text: #e8edf8;
---muted: #6b7a99;
---border: rgba(79,142,255,0.15);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-background: var(--bg);
-color: var(--text);
-font-family: 'Plus Jakarta Sans', sans-serif;
-font-size: 16.5px;
-line-height: 1.75;
-overflow-x: hidden;
-}
-
-body::before {
-content: '';
-position: fixed;
-inset: 0;
-background-image:
-linear-gradient(rgba(79,142,255,0.04) 1px, transparent 1px),
-linear-gradient(90deg, rgba(79,142,255,0.04) 1px, transparent 1px);
-background-size: 60px 60px;
-pointer-events: none;
-z-index: 0;
-}
-
-.orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
-.orb1 { width: 500px; height: 500px; background: rgba(79,142,255,0.12); top: -100px; left: -100px; }
-.orb2 { width: 400px; height: 400px; background: rgba(0,229,195,0.08); bottom: 10%; right: -100px; }
-
-nav {
-position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-display: flex; align-items: center; justify-content: space-between;
-padding: 1.2rem 5vw;
-backdrop-filter: blur(20px);
-background: rgba(5,8,16,0.7);
-border-bottom: 1px solid var(--border);
-}
-
-.logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
-.logo span { color: var(--accent); }
-
-nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-nav a:hover { color: var(--text); }
-
-.nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-
-.nav-toggle {
-display: none; background: none; border: 1px solid var(--border);
-color: var(--text); padding: 0.45rem 0.65rem; border-radius: 6px;
-cursor: pointer; font-size: 1.1rem; line-height: 1; transition: border-color 0.2s, background 0.2s;
-}
-.nav-toggle:hover { border-color: rgba(79,142,255,0.4); background: rgba(79,142,255,0.05); }
-
-.nav-cta { background: var(--accent); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.85rem !important; transition: opacity 0.2s !important; }
-.nav-cta:hover { opacity: 0.85; }
-
-section { position: relative; z-index: 1; }
-
-/* HERO */
-.hero {
-min-height: 100vh; display: flex; flex-direction: column;
-align-items: center; justify-content: center;
-text-align: center; padding: 8rem 5vw 5rem;
-}
-
-.hero-badge {
-display: inline-flex; align-items: center; gap: 0.5rem;
-background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.3);
-color: var(--accent); font-size: 0.8rem; padding: 0.4rem 1rem;
-border-radius: 100px; margin-bottom: 2rem; letter-spacing: 0.05em;
-text-transform: uppercase; animation: fadeUp 0.6s ease both;
-}
-.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
-
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-
-h1 {
-font-weight: 700; font-size: clamp(1.9rem, 4vw, 4.2rem);
-line-height: 1.08; letter-spacing: -0.02em; max-width: 780px;
-word-break: keep-all; overflow-wrap: break-word; padding: 0 1.5rem;
-animation: fadeUp 0.6s 0.1s ease both;
-}
-h1 .gradient {
-background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
--webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-
-.hero-sub { margin-top: 1.8rem; color: var(--muted); font-size: 1.08rem; max-width: 560px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
-.hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
-
-.hero-trust strong { color: var(--text); font-weight: 600; }
-
-.hero-proof a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.hero-proof a:hover { color: var(--accent); }
-.hero-proof .proof-stars { color: #f5c542; letter-spacing: 0.1em; margin-right: 0.35rem; }
-
-.hero-scroll {
-display: inline-flex; flex-direction: column; align-items: center; gap: 0.35rem;
-margin-top: 3rem; color: var(--muted); font-size: 0.75rem; text-decoration: none;
-letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.25s ease;
-animation: fadeUp 0.6s 0.45s ease both;
-}
-.hero-scroll:hover { color: var(--accent); }
-.hero-scroll-arrow { font-size: 0.9rem; animation: scrollBounce 2s ease-in-out infinite; }
-@keyframes scrollBounce { 0%,100%{transform:translateY(0);opacity:0.6} 50%{transform:translateY(5px);opacity:1} }
-
-.stat-num .stat-prefix { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin-right: 0.15rem; }
-
-.btn-primary { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(79,142,255,0.3); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(79,142,255,0.5); }
-.btn-secondary { background: transparent; color: var(--text); padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.95rem; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-.btn-secondary:hover { border-color: rgba(79,142,255,0.4); background: rgba(79,142,255,0.05); }
-
-.stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); width: 100%; max-width: 640px; animation: fadeUp 0.6s 0.4s ease both; }
-.stat-item { text-align: center; }
-.stat-num { font-size: 2rem; font-weight: 700; color: var(--text); }
-.stat-num span { color: var(--accent); }
-.stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* SERVICES */
-.services { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
-.section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1rem; }
-h2 { font-weight: 650; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 3rem; }
-
-.services-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.25rem; /* FIX: war 1.5px – jetzt echter Abstand /
-border-radius: 16px;
-overflow: visible; / FIX: war hidden – jetzt sichtbar */
-}
-
-.service-card {
-background: var(--surface);
-border: 1px solid var(--border); /* FIX: eigener Border pro Karte /
-border-radius: 14px; / FIX: abgerundete Ecken pro Karte */
-padding: 2.5rem;
-transition: background 0.3s, transform 0.35s ease, box-shadow 0.35s ease;
-position: relative; overflow: hidden;
-}
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.3s; }
-.service-card:hover { background: #0f1829; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
-.service-card:hover::before { opacity: 1; }
-.service-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.3rem; }
-.service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
-.service-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
-.service-tag { display: inline-block; margin-top: 1.2rem; font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.05em; text-transform: uppercase; }
-
-/* PROCESS */
-.process { padding: 5rem 5vw; max-width: 1100px; margin: 0 auto; }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.step { position: relative; padding-left: 1rem; border-left: 1px solid var(--border); transition: border-color 0.3s ease, transform 0.35s ease; }
-.step:hover { border-left-color: rgba(79,142,255,0.45); transform: translateX(4px); }
-.step-num { font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-.step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-.step p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
-
-/* CTA BAND */
-.cta-band { padding: 4rem 5vw; max-width: 1100px; margin: 0 auto; }
-.cta-inner { background: linear-gradient(135deg, rgba(79,142,255,0.12) 0%, rgba(0,229,195,0.06) 100%); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; transition: box-shadow 0.35s ease, transform 0.35s ease; }
-.cta-inner:hover { box-shadow: 0 8px 40px rgba(79,142,255,0.12); transform: translateY(-2px); }
-.cta-inner h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.35rem; }
-.cta-inner p { color: var(--muted); font-size: 0.9rem; max-width: 420px; }
-
-/* PRICING */
-.pricing { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
-.pricing-intro { color: var(--muted); font-size: 0.95rem; max-width: 560px; margin: -2rem 0 2.5rem; line-height: 1.6; }
-.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-@media (min-width: 1100px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; } }
-
-.pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; transition: border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-.pricing-card:hover { border-color: rgba(79,142,255,0.35); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
-.pricing-card.featured { border-color: rgba(79,142,255,0.35); box-shadow: 0 0 40px rgba(79,142,255,0.08); }
-.pricing-card.open { border-color: rgba(79,142,255,0.5); }
-.pricing-header { padding: 2rem 2rem 1.25rem; position: relative; }
-.pricing-badge { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent2); background: rgba(0,229,195,0.1); border: 1px solid rgba(0,229,195,0.25); padding: 0.25rem 0.6rem; border-radius: 100px; }
-.pricing-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
-.pricing-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem 0.45rem; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 1rem; line-height: 1.2; }
-.pricing-price span { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
-.pricing-price .amount { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.pricing-teaser { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
-.pricing-toggle { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem 1.25rem; font-size: 0.8rem; color: var(--accent); letter-spacing: 0.03em; }
-.pricing-toggle-icon { transition: transform 0.35s ease; font-size: 0.7rem; }
-.pricing-card.open .pricing-toggle-icon { transform: rotate(180deg); }
-.pricing-details { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, opacity 0.35s ease; opacity: 0; }
-.pricing-card.open .pricing-details { max-height: 560px; opacity: 1; }
-.pricing-details-inner { padding: 0 2rem 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
-.pricing-details h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; margin-top: 1rem; }
-.pricing-details h4:first-child { margin-top: 0; }
-.pricing-details ul { list-style: none; color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
-.pricing-details ul li { padding-left: 1.1rem; position: relative; margin-bottom: 0.35rem; }
-.pricing-details ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 0.75rem; }
-.pricing-details p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
-
-/* TESTIMONIALS */
-.testimonials { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-.testimonial-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: transform 0.35s ease, border-color 0.3s ease, box-shadow 0.35s ease; }
-.testimonial-card:hover { transform: translateY(-4px); border-color: rgba(79,142,255,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
-.stars { color: #f5c542; font-size: 0.95rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
-.testimonial-text { color: var(--text); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.25rem; }
-.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-.testimonial-avatar { width: 40px; height: 40px; border-radius: 10px; background: rgba(79,142,255,0.15); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: var(--accent); }
-.testimonial-name { font-size: 0.9rem; font-weight: 600; }
-.testimonial-role { font-size: 0.78rem; color: var(--muted); }
-
-/* FAQ */
-.faq { padding: 5rem 5vw 7rem; max-width: 760px; margin: 0 auto; }
-.faq-list { margin-top: 2rem; }
-.faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; background: var(--surface); transition: border-color 0.3s ease; }
-.faq-item:hover { border-color: rgba(79,142,255,0.3); }
-.faq-item.open { border-color: rgba(79,142,255,0.4); }
-.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 600; text-align: left; cursor: pointer; transition: color 0.2s; }
-.faq-question:hover { color: var(--accent); }
-.faq-icon { flex-shrink: 0; color: var(--accent); transition: transform 0.35s ease; font-size: 0.75rem; }
-.faq-item.open .faq-icon { transform: rotate(180deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
-.faq-item.open .faq-answer { max-height: 280px; opacity: 1; }
-.faq-answer p { padding: 0 1.5rem 1.25rem; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
-
-/* CONTACT */
-.contact { padding: 7rem 5vw; max-width: 640px; margin: 0 auto; text-align: center; }
-.contact-sub { color: var(--muted); font-size: 0.95rem; margin-top: -2rem; margin-bottom: 2rem; line-height: 1.6; }
-.contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-top: 1rem; position: relative; overflow: hidden; text-align: left; transition: box-shadow 0.35s ease; }
-.contact-box:hover { box-shadow: 0 12px 48px rgba(79,142,255,0.08); }
-.contact-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(79,142,255,0.06) 0%, transparent 60%); pointer-events: none; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.form-group { margin-bottom: 1.25rem; }
-.form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 0.45rem; letter-spacing: 0.02em; }
-.form-group label .optional { font-weight: 400; color: var(--muted); }
-.form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(5,8,16,0.6); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: inherit; font-size: 0.92rem; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: rgba(79,142,255,0.5); box-shadow: 0 0 0 3px rgba(79,142,255,0.12); }
-.form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); opacity: 0.7; }
-.form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7a99' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
-.form-group select option { background: var(--surface); color: var(--text); }
-.form-group textarea { min-height: 120px; resize: vertical; }
-.form-submit { width: 100%; margin-top: 0.5rem; padding: 0.9rem 2rem; background: var(--accent); color: #fff; border: none; border-radius: 8px; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 0 30px rgba(79,142,255,0.25); }
-.form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(79,142,255,0.4); }
-.contact-alt { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border); text-align: center; }
-.contact-alt p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
-.contact-email { display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.3); color: var(--accent); padding: 1rem 2rem; border-radius: 10px; font-size: 1rem; text-decoration: none; transition: background 0.2s, box-shadow 0.2s; word-break: break-all; }
-.contact-email:hover { background: rgba(79,142,255,0.2); box-shadow: 0 0 30px rgba(79,142,255,0.2); }
-.contact-note { margin-top: 1.5rem; font-size: 0.8rem; color: var(--muted); }
-
-footer { border-top: 1px solid var(--border); padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
-footer p { font-size: 0.8rem; color: var(--muted); }
-
-@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.16s; }
-.reveal-delay-3 { transition-delay: 0.24s; }
-
-@media (prefers-reduced-motion: reduce) {
-html { scroll-behavior: auto; }
-.reveal, .hero-badge, h1, .hero-sub, .hero-actions, .hero-trust, .hero-proof, .hero-scroll, .stats { animation: none; transition: none; }
-.reveal { opacity: 1; transform: none; }
-.service-card:hover, .pricing-card:hover, .testimonial-card:hover, .step:hover, .cta-inner:hover { transform: none; }
-}
-
-@media (max-width: 900px) {
-.nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 5vw 1.25rem; background: rgba(5,8,16,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); }
-.nav-links.open { display: flex; }
-.nav-links a { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
-.nav-links a:last-child { border-bottom: none; }
-.nav-links .nav-cta { text-align: center; margin-top: 0.5rem; padding: 0.75rem 1.2rem !important; }
-.nav-toggle { display: block; }
-nav { flex-wrap: wrap; position: relative; }
-.cta-inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
-.cta-inner .btn-primary { width: 100%; text-align: center; }
-.form-row { grid-template-columns: 1fr; }
-}
-
-/* MOBILE FIX – Badge näher an Headline, Karten mit mehr Abstand */
-@media (max-width: 1024px) {
-.hero {
-min-height: auto !important;
-justify-content: flex-start;
-padding: 1.8rem 5vw 2rem !important;
-}
-
-.hero-badge {
-font-size: 0.78rem !important;
-padding: 0.4rem 0.85rem !important;
-margin-bottom: 3rem !important;
-}
-
-h1 {
-font-size: 2.15rem !important;
-padding: 0 0.25rem !important;
-line-height: 1.18 !important;
-margin-bottom: 0 !important;
-}
-
-.hero-sub {
-font-size: 1rem !important;
-margin-top: 3.4rem !important;
-line-height: 1.55 !important;
-}
-
-.hero-actions {
-flex-direction: column !important;
-width: 100% !important;
-max-width: 280px !important;
-margin-top: 3.4rem !important;
-gap: 0.75rem !important;
-}
-.hero-actions a { width: 100% !important; text-align: center !important; }
-
-
-
-.stats { gap: 1.25rem 1.75rem !important; margin-top: 2rem !important; padding-top: 1.75rem !important; }
-
-.stat-num { font-size: 1.5rem !important; }
-.stat-label { font-size: 0.68rem !important; }
-.hero-scroll { margin-top: 1.25rem !important; }
-
-.services-grid {
-gap: 1rem !important;
-}
-
-.contact-box { padding: 1.75rem 1.25rem; }
-.pricing-header, .pricing-toggle, .pricing-details-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
-.services, .pricing, .testimonials, .process, .faq { padding: 4rem 5vw; }
-.contact { padding: 4rem 5vw; }
-.cta-band { padding: 2.5rem 5vw; }
-h2 { margin-bottom: 2rem; font-size: 1.65rem; }
-nav { padding: 0.9rem 5vw; }
-}
-
-@media (max-width: 380px) {
-.hero { padding-top: 2.85rem !important; }
-.hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; margin-bottom: 0.5rem !important; }
-h1 { font-size: 1.85rem; }
-.hero-sub { font-size: 1rem; }
-.stats { gap: 1rem 1.25rem; }
-.stat-num { font-size: 1.35rem; }
-}
-
-/* Datenschutz nur bei Klick anzeigen */
-.privacy-page {
-display: none;
-position: fixed;
-inset: 0;
-z-index: 999;
-overflow-y: auto;
-background: var(--bg);
-padding: 7rem 5vw 4rem;
-}
-
-.privacy-page:target {
-display: block;
-}
-
-.privacy-inner {
-max-width: 760px;
-margin: 0 auto;
-background: var(--surface);
-border: 1px solid var(--border);
-border-radius: 20px;
-padding: 2.5rem;
-box-shadow: 0 24px 80px rgba(0,0,0,0.35);
-}
-
-.privacy-close {
-display: inline-flex;
-margin-bottom: 2rem;
-color: var(--accent);
-text-decoration: none;
-font-size: 0.9rem;
-}
-
-.privacy-inner h2 {
-margin-bottom: 1.5rem;
-}
-
-.privacy-inner h3 {
-margin-top: 1.8rem;
-margin-bottom: 0.6rem;
-font-size: 1rem;
-}
-
-.privacy-inner p,
-.privacy-inner li {
-color: var(--muted);
-font-size: 0.92rem;
-line-height: 1.7;
-}
-
-.privacy-inner ul {
-margin-left: 1.2rem;
-margin-top: 0.75rem;
-}
-
-@media (max-width: 640px) {
-.privacy-page {
-padding: 5.5rem 5vw 3rem;
-}
-
-.privacy-inner {
-padding: 1.5rem;
-}
-}
-
-
-
-
-
-.gallery-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-
-
-.tiktok-card {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background:
-radial-gradient(circle at 35% 30%, rgba(0,229,195,0.35), transparent 28%),
-radial-gradient(circle at 70% 65%, rgba(255,45,85,0.28), transparent 30%),
-linear-gradient(135deg, #050810 0%, #11182b 100%);
-}
-
-.tiktok-card::before,
-.tiktok-card::after {
-display: none;
-}
-
-.tiktok-symbol {
-width: 86px;
-height: 86px;
-border-radius: 24px;
-display: flex;
-align-items: center;
-justify-content: center;
-background: rgba(5,8,16,0.72);
-border: 1px solid rgba(232,237,248,0.16);
-box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-font-size: 4rem;
-font-weight: 800;
-color: #fff;
-text-shadow: -3px 0 #00e5c3, 3px 0 #ff2d55;
-}
-
-.tiktok-label {
-margin-top: 1rem;
-color: var(--text);
-font-size: 0.9rem;
-font-weight: 600;
-letter-spacing: 0.04em;
-}
-
-
-/* FINAL MOBILE HERO INFO FIX */
-@media (max-width: 640px) {
-.hero-actions {
-margin-top: 2.2rem !important;
-margin-bottom: 0 !important;
-}
-
-
-
-
-
-.hero-proof a {
-display: inline-flex !important;
-align-items: center !important;
-justify-content: center !important;
-gap: 0.35rem !important;
-flex-wrap: wrap !important;
-text-align: center !important;
-}
-
-.hero-proof .proof-stars {
-margin-right: 0 !important;
-letter-spacing: 0.08em !important;
-}
-}
-
-
-
-/* FINAL RELIABLE MOBILE HERO INFO SPACING */
-.hero-info { text-align: center; padding-top: 2.7rem; }
-
-@media (max-width: 640px) {
-.hero-info { margin-top: 0 !important; padding-top: 2.7rem !important;
-text-align: center !important;
-}
-
-.hero-info .hero-trust {
-margin: 0 !important;
-text-align: center !important;
-font-size: 0.82rem !important;
-line-height: 1.55 !important;
-color: var(--muted) !important;
-}
-
-.hero-info .hero-proof {
-margin: 0.35rem 0 0 !important;
-text-align: center !important;
-font-size: 0.82rem !important;
-line-height: 1.45 !important;
-}
-
-.hero-info .hero-proof a {
-display: inline-flex !important;
-justify-content: center !important;
-align-items: center !important;
-gap: 0.35rem !important;
-flex-wrap: wrap !important;
-text-align: center !important;
-}
-}
-
-
-/* MOBILE HERO CLEANUP WITHOUT TOP INFO BLOCK */
-@media (max-width: 640px) {
-.hero {
-padding-top: 2.6rem !important;
-padding-bottom: 3.2rem !important;
-}
-
-.hero-badge {
-margin-bottom: 4.2rem !important;
-}
-
-h1 {
-margin-bottom: 2.2rem !important;
-}
-
-.hero-sub {
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-max-width: 92% !important;
-}
-
-.hero-actions {
-margin-top: 2.9rem !important;
-margin-bottom: 0 !important;
-}
-
-.stats {
-margin-top: 3.2rem !important;
-padding-top: 2.1rem !important;
-}
-
-.hero-scroll {
-margin-top: 2rem !important;
-}
-}
-
-
-/* FINAL CLEAN MOBILE HERO LAYOUT */
-@media (max-width: 640px) {
-.hero {
-min-height: auto !important;
-padding: 1.2rem 5vw 2.4rem !important;
-justify-content: flex-start !important;
-}
-
-.hero-badge {
-margin-bottom: 2rem !important;
-}
-
-h1 {
-font-size: 2.05rem !important;
-line-height: 1.2 !important;
-margin-bottom: 1.35rem !important;
-padding: 0 0.25rem !important;
-}
-
-.hero-sub {
-margin: 0 auto !important;
-max-width: 92% !important;
-font-size: 1rem !important;
-line-height: 1.68 !important;
-}
-
-.stats {
-display: grid !important;
-grid-template-columns: repeat(3, 1fr) !important;
-gap: 0.85rem !important;
-width: 100% !important;
-max-width: 360px !important;
-margin: 1.65rem auto 0 !important;
-padding: 1.15rem 0 0 !important;
-border-top: 1px solid var(--border) !important;
-}
-
-.stat-item {
-min-width: 0 !important;
-text-align: center !important;
-}
-
-.stat-num {
-font-size: 1.2rem !important;
-line-height: 1.15 !important;
-}
-
-.stat-num .stat-prefix {
-font-size: 0.7rem !important;
-margin-right: 0.08rem !important;
-}
-
-.stat-label {
-margin-top: 0.35rem !important;
-font-size: 0.62rem !important;
-line-height: 1.3 !important;
-letter-spacing: 0.04em !important;
-}
-
-.hero-actions {
-margin-top: 1.65rem !important;
-gap: 0.85rem !important;
-width: 100% !important;
-max-width: 285px !important;
-}
-
-.hero-actions a {
-width: 100% !important;
-text-align: center !important;
-}
-
-.hero-scroll {
-margin-top: 2.15rem !important;
-}
-}
-
-
-.mobile-proof {
-margin-top: 1.5rem !important;
-text-align: center;
-}
-
-.mobile-proof a {
-color: var(--muted);
-text-decoration: none;
-font-size: 0.82rem;
-display: inline-flex;
-align-items: center;
-gap: 0.35rem;
-transition: color 0.2s ease;
-}
-
-.mobile-proof a:hover {
-color: var(--accent);
-}
-
-.mobile-proof .proof-stars {
-color: #f5c542;
-letter-spacing: 0.08em;
-}
-
-@media (max-width: 640px) {
-.mobile-proof { margin-top: 0.85rem !important;
-}
-
-.mobile-proof a {
-font-size: 0.78rem !important;
-flex-wrap: wrap;
-justify-content: center;
-line-height: 1.45;
-}
-}
-
-
-
-/* FINAL EVENLY SPACED MOBILE HERO */
-@media (max-width: 640px) {
-.hero {
-min-height: 100svh !important;
-padding: 2.4rem 5vw 2.6rem !important;
-justify-content: flex-start !important;
-}
-
-.hero-badge {
-margin-bottom: 2.7rem !important;
-font-size: 0.74rem !important;
-padding: 0.38rem 0.8rem !important;
-}
-
-h1 {
-font-size: 2rem !important;
-line-height: 1.2 !important;
-margin-bottom: 2.35rem !important;
-padding: 0 0.25rem !important;
-}
-
-.hero-sub {
-margin: 0 auto !important;
-max-width: 92% !important;
-font-size: 0.98rem !important;
-line-height: 1.68 !important;
-}
-
-.stats {
-display: grid !important;
-grid-template-columns: repeat(3, 1fr) !important;
-gap: 0.75rem !important;
-width: 100% !important;
-max-width: 350px !important;
-margin: 2.4rem auto 0 !important;
-padding: 1.2rem 0 0 !important;
-border-top: 1px solid var(--border) !important;
-}
-
-.stat-item {
-text-align: center !important;
-}
-
-.stat-num {
-font-size: 1.15rem !important;
-}
-
-.stat-label {
-margin-top: 0.32rem !important;
-font-size: 0.6rem !important;
-line-height: 1.3 !important;
-}
-
-.hero-actions {
-margin-top: 1.75rem !important;
-gap: 0.8rem !important;
-width: 100% !important;
-max-width: 285px !important;
-}
-
-.hero-actions a {
-width: 100% !important;
-text-align: center !important;
-padding: 0.8rem 1.4rem !important;
-}
-
-.hero-scroll,
-.mobile-proof,
-.hero-info {
-display: none !important;
-}
-}
-
-@media (max-width: 380px) {
-.hero {
-padding-top: 1.8rem !important;
-padding-bottom: 2rem !important;
-}
-
-.hero-badge {
-margin-bottom: 2rem !important;
-}
-
-h1 {
-font-size: 1.78rem !important;
-margin-bottom: 1.8rem !important;
-}
-
-.stats {
-margin-top: 2rem !important;
-}
-
-.hero-actions {
-margin-top: 1.45rem !important;
-}
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #050810;
+    --surface: #0c1120;
+    --accent: #4f8eff;
+    --accent2: #00e5c3;
+    --text: #e8edf8;
+    --muted: #6b7a99;
+    --border: rgba(79,142,255,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16.5px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+  .orb1 { width: 500px; height: 500px; background: rgba(79,142,255,0.12); top: -100px; left: -100px; }
+  .orb2 { width: 400px; height: 400px; background: rgba(0,229,195,0.08); bottom: 10%; right: -100px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5vw;
+    backdrop-filter: blur(20px);
+    background: rgba(5,8,16,0.7);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+  .logo span { color: var(--accent); }
+
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  nav a:hover { color: var(--text); }
+
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+
+  .nav-toggle {
+    display: none; background: none; border: 1px solid var(--border);
+    color: var(--text); padding: 0.45rem 0.65rem; border-radius: 6px;
+    cursor: pointer; font-size: 1.1rem; line-height: 1; transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-toggle:hover { border-color: rgba(79,142,255,0.4); background: rgba(79,142,255,0.05); }
+
+  .nav-cta { background: var(--accent); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.85rem !important; transition: opacity 0.2s !important; }
+  .nav-cta:hover { opacity: 0.85; }
+
+  section { position: relative; z-index: 1; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 5vw 5rem;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.3);
+    color: var(--accent); font-size: 0.8rem; padding: 0.4rem 1rem;
+    border-radius: 100px; margin-bottom: 2rem; letter-spacing: 0.05em;
+    text-transform: uppercase; animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+  h1 {
+    font-weight: 700; font-size: clamp(1.9rem, 4vw, 4.2rem);
+    line-height: 1.08; letter-spacing: -0.02em; max-width: 780px;
+    word-break: keep-all; overflow-wrap: break-word; padding: 0 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 .gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .hero-sub { margin-top: 1.8rem; color: var(--muted); font-size: 1.08rem; max-width: 560px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; }
+  
+  .hero-trust strong { color: var(--text); font-weight: 600; }
+  
+  .hero-proof a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .hero-proof a:hover { color: var(--accent); }
+  .hero-proof .proof-stars { color: #f5c542; letter-spacing: 0.1em; margin-right: 0.35rem; }
+
+  .hero-scroll {
+    display: inline-flex; flex-direction: column; align-items: center; gap: 0.35rem;
+    margin-top: 3rem; color: var(--muted); font-size: 0.75rem; text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.25s ease;
+    animation: fadeUp 0.6s 0.45s ease both;
+  }
+  .hero-scroll:hover { color: var(--accent); }
+  .hero-scroll-arrow { font-size: 0.9rem; animation: scrollBounce 2s ease-in-out infinite; }
+  @keyframes scrollBounce { 0%,100%{transform:translateY(0);opacity:0.6} 50%{transform:translateY(5px);opacity:1} }
+
+  .stat-num .stat-prefix { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin-right: 0.15rem; }
+
+  .btn-primary { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(79,142,255,0.3); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(79,142,255,0.5); }
+  .btn-secondary { background: transparent; color: var(--text); padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.95rem; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .btn-secondary:hover { border-color: rgba(79,142,255,0.4); background: rgba(79,142,255,0.05); }
+
+  .stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); width: 100%; max-width: 640px; animation: fadeUp 0.6s 0.4s ease both; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 2rem; font-weight: 700; color: var(--text); }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* SERVICES */
+  .services { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1rem; }
+  h2 { font-weight: 650; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 3rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem; /* FIX: war 1.5px – jetzt echter Abstand */
+    border-radius: 16px;
+    overflow: visible; /* FIX: war hidden – jetzt sichtbar */
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border); /* FIX: eigener Border pro Karte */
+    border-radius: 14px; /* FIX: abgerundete Ecken pro Karte */
+    padding: 2.5rem;
+    transition: background 0.3s, transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.3s; }
+  .service-card:hover { background: #0f1829; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.3rem; }
+  .service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+  .service-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+  .service-tag { display: inline-block; margin-top: 1.2rem; font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* PROCESS */
+  .process { padding: 5rem 5vw; max-width: 1100px; margin: 0 auto; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .step { position: relative; padding-left: 1rem; border-left: 1px solid var(--border); transition: border-color 0.3s ease, transform 0.35s ease; }
+  .step:hover { border-left-color: rgba(79,142,255,0.45); transform: translateX(4px); }
+  .step-num { font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+  .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .step p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+  /* CTA BAND */
+  .cta-band { padding: 4rem 5vw; max-width: 1100px; margin: 0 auto; }
+  .cta-inner { background: linear-gradient(135deg, rgba(79,142,255,0.12) 0%, rgba(0,229,195,0.06) 100%); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; transition: box-shadow 0.35s ease, transform 0.35s ease; }
+  .cta-inner:hover { box-shadow: 0 8px 40px rgba(79,142,255,0.12); transform: translateY(-2px); }
+  .cta-inner h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .cta-inner p { color: var(--muted); font-size: 0.9rem; max-width: 420px; }
+
+  /* PRICING */
+  .pricing { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
+  .pricing-intro { color: var(--muted); font-size: 0.95rem; max-width: 560px; margin: -2rem 0 2.5rem; line-height: 1.6; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  @media (min-width: 1100px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; transition: border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+  .pricing-card:hover { border-color: rgba(79,142,255,0.35); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+  .pricing-card.featured { border-color: rgba(79,142,255,0.35); box-shadow: 0 0 40px rgba(79,142,255,0.08); }
+  .pricing-card.open { border-color: rgba(79,142,255,0.5); }
+  .pricing-header { padding: 2rem 2rem 1.25rem; position: relative; }
+  .pricing-badge { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent2); background: rgba(0,229,195,0.1); border: 1px solid rgba(0,229,195,0.25); padding: 0.25rem 0.6rem; border-radius: 100px; }
+  .pricing-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .pricing-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem 0.45rem; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 1rem; line-height: 1.2; }
+  .pricing-price span { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+  .pricing-price .amount { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .pricing-teaser { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+  .pricing-toggle { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem 1.25rem; font-size: 0.8rem; color: var(--accent); letter-spacing: 0.03em; }
+  .pricing-toggle-icon { transition: transform 0.35s ease; font-size: 0.7rem; }
+  .pricing-card.open .pricing-toggle-icon { transform: rotate(180deg); }
+  .pricing-details { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, opacity 0.35s ease; opacity: 0; }
+  .pricing-card.open .pricing-details { max-height: 560px; opacity: 1; }
+  .pricing-details-inner { padding: 0 2rem 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  .pricing-details h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; margin-top: 1rem; }
+  .pricing-details h4:first-child { margin-top: 0; }
+  .pricing-details ul { list-style: none; color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+  .pricing-details ul li { padding-left: 1.1rem; position: relative; margin-bottom: 0.35rem; }
+  .pricing-details ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 0.75rem; }
+  .pricing-details p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .testimonials { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .testimonial-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: transform 0.35s ease, border-color 0.3s ease, box-shadow 0.35s ease; }
+  .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(79,142,255,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+  .stars { color: #f5c542; font-size: 0.95rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+  .testimonial-text { color: var(--text); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.25rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testimonial-avatar { width: 40px; height: 40px; border-radius: 10px; background: rgba(79,142,255,0.15); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+  .testimonial-name { font-size: 0.9rem; font-weight: 600; }
+  .testimonial-role { font-size: 0.78rem; color: var(--muted); }
+
+  /* FAQ */
+  .faq { padding: 5rem 5vw 7rem; max-width: 760px; margin: 0 auto; }
+  .faq-list { margin-top: 2rem; }
+  .faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; background: var(--surface); transition: border-color 0.3s ease; }
+  .faq-item:hover { border-color: rgba(79,142,255,0.3); }
+  .faq-item.open { border-color: rgba(79,142,255,0.4); }
+  .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; background: none; border: none; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 600; text-align: left; cursor: pointer; transition: color 0.2s; }
+  .faq-question:hover { color: var(--accent); }
+  .faq-icon { flex-shrink: 0; color: var(--accent); transition: transform 0.35s ease; font-size: 0.75rem; }
+  .faq-item.open .faq-icon { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
+  .faq-item.open .faq-answer { max-height: 280px; opacity: 1; }
+  .faq-answer p { padding: 0 1.5rem 1.25rem; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+
+  /* CONTACT */
+  .contact { padding: 7rem 5vw; max-width: 640px; margin: 0 auto; text-align: center; }
+  .contact-sub { color: var(--muted); font-size: 0.95rem; margin-top: -2rem; margin-bottom: 2rem; line-height: 1.6; }
+  .contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-top: 1rem; position: relative; overflow: hidden; text-align: left; transition: box-shadow 0.35s ease; }
+  .contact-box:hover { box-shadow: 0 12px 48px rgba(79,142,255,0.08); }
+  .contact-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(79,142,255,0.06) 0%, transparent 60%); pointer-events: none; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 0.45rem; letter-spacing: 0.02em; }
+  .form-group label .optional { font-weight: 400; color: var(--muted); }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(5,8,16,0.6); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: inherit; font-size: 0.92rem; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: rgba(79,142,255,0.5); box-shadow: 0 0 0 3px rgba(79,142,255,0.12); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); opacity: 0.7; }
+  .form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7a99' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+  .form-group select option { background: var(--surface); color: var(--text); }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .form-submit { width: 100%; margin-top: 0.5rem; padding: 0.9rem 2rem; background: var(--accent); color: #fff; border: none; border-radius: 8px; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 0 30px rgba(79,142,255,0.25); }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(79,142,255,0.4); }
+  .contact-alt { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border); text-align: center; }
+  .contact-alt p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+  .contact-email { display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(79,142,255,0.1); border: 1px solid rgba(79,142,255,0.3); color: var(--accent); padding: 1rem 2rem; border-radius: 10px; font-size: 1rem; text-decoration: none; transition: background 0.2s, box-shadow 0.2s; word-break: break-all; }
+  .contact-email:hover { background: rgba(79,142,255,0.2); box-shadow: 0 0 30px rgba(79,142,255,0.2); }
+  .contact-note { margin-top: 1.5rem; font-size: 0.8rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .hero-badge, h1, .hero-sub, .hero-actions, .hero-trust, .hero-proof, .hero-scroll, .stats { animation: none; transition: none; }
+    .reveal { opacity: 1; transform: none; }
+    .service-card:hover, .pricing-card:hover, .testimonial-card:hover, .step:hover, .cta-inner:hover { transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 5vw 1.25rem; background: rgba(5,8,16,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .nav-links a:last-child { border-bottom: none; }
+    .nav-links .nav-cta { text-align: center; margin-top: 0.5rem; padding: 0.75rem 1.2rem !important; }
+    .nav-toggle { display: block; }
+    nav { flex-wrap: wrap; position: relative; }
+    .cta-inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+    .cta-inner .btn-primary { width: 100%; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* MOBILE FIX – Badge näher an Headline, Karten mit mehr Abstand */
+  @media (max-width: 1024px) {
+    .hero {
+      min-height: auto !important;
+      justify-content: flex-start;
+      padding: 1.8rem 5vw 2rem !important;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem !important;
+      padding: 0.4rem 0.85rem !important;
+      margin-bottom: 3rem !important;
+    }
+
+    h1 {
+      font-size: 2.15rem !important;
+      padding: 0 0.25rem !important;
+      line-height: 1.18 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .hero-sub {
+      font-size: 1rem !important;
+      margin-top: 3.4rem !important;
+      line-height: 1.55 !important;
+    }
+
+    .hero-actions {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 280px !important;
+      margin-top: 3.4rem !important;
+      gap: 0.75rem !important;
+    }
+    .hero-actions a { width: 100% !important; text-align: center !important; }
+
+    
+    
+    .stats { gap: 1.25rem 1.75rem !important; margin-top: 2rem !important; padding-top: 1.75rem !important; }
+
+    .stat-num { font-size: 1.5rem !important; }
+    .stat-label { font-size: 0.68rem !important; }
+    .hero-scroll { margin-top: 1.25rem !important; }
+
+    .services-grid {
+      gap: 1rem !important;
+    }
+
+    .contact-box { padding: 1.75rem 1.25rem; }
+    .pricing-header, .pricing-toggle, .pricing-details-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .services, .pricing, .testimonials, .process, .faq { padding: 4rem 5vw; }
+    .contact { padding: 4rem 5vw; }
+    .cta-band { padding: 2.5rem 5vw; }
+    h2 { margin-bottom: 2rem; font-size: 1.65rem; }
+    nav { padding: 0.9rem 5vw; }
+  }
+
+  @media (max-width: 380px) {
+    .hero { padding-top: 2.85rem !important; }
+    .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; margin-bottom: 0.5rem !important; }
+    h1 { font-size: 1.85rem; }
+    .hero-sub { font-size: 1rem; }
+    .stats { gap: 1rem 1.25rem; }
+    .stat-num { font-size: 1.35rem; }
+  }
+
+  /* Datenschutz nur bei Klick anzeigen */
+  .privacy-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    overflow-y: auto;
+    background: var(--bg);
+    padding: 7rem 5vw 4rem;
+  }
+
+  .privacy-page:target {
+    display: block;
+  }
+
+  .privacy-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  }
+
+  .privacy-close {
+    display: inline-flex;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .privacy-inner h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-inner h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .privacy-inner p,
+  .privacy-inner li {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .privacy-inner ul {
+    margin-left: 1.2rem;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .privacy-page {
+      padding: 5.5rem 5vw 3rem;
+    }
+
+    .privacy-inner {
+      padding: 1.5rem;
+    }
+  }
+
+
+  
+
+
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+  .tiktok-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(0,229,195,0.35), transparent 28%),
+      radial-gradient(circle at 70% 65%, rgba(255,45,85,0.28), transparent 30%),
+      linear-gradient(135deg, #050810 0%, #11182b 100%);
+  }
+
+  .tiktok-card::before,
+  .tiktok-card::after {
+    display: none;
+  }
+
+  .tiktok-symbol {
+    width: 86px;
+    height: 86px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,8,16,0.72);
+    border: 1px solid rgba(232,237,248,0.16);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: -3px 0 #00e5c3, 3px 0 #ff2d55;
+  }
+
+  .tiktok-label {
+    margin-top: 1rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+
+  /* FINAL MOBILE HERO INFO FIX */
+  @media (max-width: 640px) {
+    .hero-actions {
+      margin-top: 2.2rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    
+
+    
+
+    .hero-proof a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.35rem !important;
+      flex-wrap: wrap !important;
+      text-align: center !important;
+    }
+
+    .hero-proof .proof-stars {
+      margin-right: 0 !important;
+      letter-spacing: 0.08em !important;
+    }
+  }
+
+
+  
+  /* FINAL RELIABLE MOBILE HERO INFO SPACING */
+  .hero-info { text-align: center; padding-top: 2.7rem; }
+
+  @media (max-width: 640px) {
+    .hero-info { margin-top: 0 !important; padding-top: 2.7rem !important;
+      text-align: center !important;
+    }
+
+    .hero-info .hero-trust {
+      margin: 0 !important;
+      text-align: center !important;
+      font-size: 0.82rem !important;
+      line-height: 1.55 !important;
+      color: var(--muted) !important;
+    }
+
+    .hero-info .hero-proof {
+      margin: 0.35rem 0 0 !important;
+      text-align: center !important;
+      font-size: 0.82rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .hero-info .hero-proof a {
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 0.35rem !important;
+      flex-wrap: wrap !important;
+      text-align: center !important;
+    }
+  }
+
+
+  /* MOBILE HERO CLEANUP WITHOUT TOP INFO BLOCK */
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 2.6rem !important;
+      padding-bottom: 3.2rem !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 4.2rem !important;
+    }
+
+    h1 {
+      margin-bottom: 2.2rem !important;
+    }
+
+    .hero-sub {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      max-width: 92% !important;
+    }
+
+    .hero-actions {
+      margin-top: 2.9rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    .stats {
+      margin-top: 3.2rem !important;
+      padding-top: 2.1rem !important;
+    }
+
+    .hero-scroll {
+      margin-top: 2rem !important;
+    }
+  }
+
+
+  /* FINAL CLEAN MOBILE HERO LAYOUT */
+  @media (max-width: 640px) {
+    .hero {
+      min-height: auto !important;
+      padding: 1.2rem 5vw 2.4rem !important;
+      justify-content: flex-start !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 2rem !important;
+    }
+
+    h1 {
+      font-size: 2.05rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1.35rem !important;
+      padding: 0 0.25rem !important;
+    }
+
+    .hero-sub {
+      margin: 0 auto !important;
+      max-width: 92% !important;
+      font-size: 1rem !important;
+      line-height: 1.68 !important;
+    }
+
+    .stats {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.85rem !important;
+      width: 100% !important;
+      max-width: 360px !important;
+      margin: 1.65rem auto 0 !important;
+      padding: 1.15rem 0 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .stat-item {
+      min-width: 0 !important;
+      text-align: center !important;
+    }
+
+    .stat-num {
+      font-size: 1.2rem !important;
+      line-height: 1.15 !important;
+    }
+
+    .stat-num .stat-prefix {
+      font-size: 0.7rem !important;
+      margin-right: 0.08rem !important;
+    }
+
+    .stat-label {
+      margin-top: 0.35rem !important;
+      font-size: 0.62rem !important;
+      line-height: 1.3 !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    .hero-actions {
+      margin-top: 1.65rem !important;
+      gap: 0.85rem !important;
+      width: 100% !important;
+      max-width: 285px !important;
+    }
+
+    .hero-actions a {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    .hero-scroll {
+      margin-top: 2.15rem !important;
+    }
+  }
+
+
+  .mobile-proof {
+    margin-top: 1.5rem !important;
+    text-align: center;
+  }
+
+  .mobile-proof a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-proof a:hover {
+    color: var(--accent);
+  }
+
+  .mobile-proof .proof-stars {
+    color: #f5c542;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-proof { margin-top: 0.85rem !important;
+    }
+
+    .mobile-proof a {
+      font-size: 0.78rem !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 1.45;
+    }
+  }
+
+
+  
+  /* FINAL EVENLY SPACED MOBILE HERO */
+  @media (max-width: 640px) {
+    .hero {
+      min-height: 100svh !important;
+      padding: 2.4rem 5vw 2.6rem !important;
+      justify-content: flex-start !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 2.7rem !important;
+      font-size: 0.74rem !important;
+      padding: 0.38rem 0.8rem !important;
+    }
+
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 2.35rem !important;
+      padding: 0 0.25rem !important;
+    }
+
+    .hero-sub {
+      margin: 0 auto !important;
+      max-width: 92% !important;
+      font-size: 0.98rem !important;
+      line-height: 1.68 !important;
+    }
+
+    .stats {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.75rem !important;
+      width: 100% !important;
+      max-width: 350px !important;
+      margin: 2.4rem auto 0 !important;
+      padding: 1.2rem 0 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .stat-item {
+      text-align: center !important;
+    }
+
+    .stat-num {
+      font-size: 1.15rem !important;
+    }
+
+    .stat-label {
+      margin-top: 0.32rem !important;
+      font-size: 0.6rem !important;
+      line-height: 1.3 !important;
+    }
+
+    .hero-actions {
+      margin-top: 1.75rem !important;
+      gap: 0.8rem !important;
+      width: 100% !important;
+      max-width: 285px !important;
+    }
+
+    .hero-actions a {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 0.8rem 1.4rem !important;
+    }
+
+    .hero-scroll,
+    .mobile-proof,
+    .hero-info {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .hero {
+      padding-top: 1.8rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 2rem !important;
+    }
+
+    h1 {
+      font-size: 1.78rem !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .stats {
+      margin-top: 2rem !important;
+    }
+
+    .hero-actions {
+      margin-top: 1.45rem !important;
+    }
+  }
 
 
 </style>
@@ -798,236 +798,502 @@ margin-top: 1.45rem !important;
 <div class="orb orb2"></div>
 
 <nav>
-<a href="#" class="logo">Visib<span>.</span>ly</a>
-<button type="button" class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-<div class="nav-links" id="nav-links">
-<a href="#leistungen">Leistungen</a>
-<a href="#pakete">Pakete</a>
-<a href="#ablauf">Ablauf</a>
-<a href="#faq">FAQ</a>
-<a href="#datenschutz">Datenschutz</a>
-<a href="#kontakt" class="nav-cta">Kontakt</a>
-</div>
+  <a href="#" class="logo">Visib<span>.</span>ly</a>
+  <button type="button" class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <div class="nav-links" id="nav-links">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#pakete">Pakete</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#faq">FAQ</a>
+    <a href="#datenschutz">Datenschutz</a>
+    <a href="#kontakt" class="nav-cta">Kontakt</a>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="hero-badge">Shop · Texte · Logos · Social Media</div>
-<h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
-<p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
-</p>
-<div class="stats">
-<div class="stat-item">
-<div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
-<div class="stat-label">Einstiegspaket</div>
-</div>
-<div class="stat-item">
-<div class="stat-num">24<span>h</span></div>
-<div class="stat-label">Antwortzeit</div>
-</div>
-<div class="stat-item">
-<div class="stat-num">100<span>%</span></div>
-<div class="stat-label">Schriftlich</div>
-</div>
-</div>
-<div class="hero-actions">
-<a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
-<a href="#pakete" class="btn-secondary">Pakete ansehen</a>
-</div>
+  <div class="hero-badge">Shop · Texte · Logos · Social Media</div>
+  <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
+  <p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
+  </p>
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
+      <div class="stat-label">Einstiegspaket</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24<span>h</span></div>
+      <div class="stat-label">Antwortzeit</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Schriftlich</div>
+    </div>
+  </div>
+  <div class="hero-actions">
+    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
+    <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
+  </div>
 </section>
 
 <section class="services" id="leistungen">
-<p class="section-label reveal">Leistungen</p>
-<h2 class="reveal">Was ich für Sie tue.</h2>
-<div class="services-grid reveal">
-<div class="service-card">
-<div class="service-icon">🛒</div>
-<h3>Online-Shop Erstellung</h3>
-<p>Ich baue Ihren professionellen Shop mit Shopify oder WooCommerce – von der Einrichtung bis zu den fertigen Produktbeschreibungen. Sie müssen nur noch verkaufen.</p>
-<span class="service-tag">→ Shopify & WooCommerce</span>
-</div>
-<div class="service-card">
-<div class="service-icon">✍️</div>
-<h3>Texte & Copywriting</h3>
-<p>Überzeugende Website-Texte, Produktbeschreibungen und Landingpages, die Besucher in Kunden verwandeln. Klar, präzise, wirkungsvoll.</p>
-<span class="service-tag">→ Website, Shop, E-Mail</span>
-</div>
-<div class="service-card">
-<div class="service-icon">📱</div>
-<h3>Social Media Content</h3>
-<p>Fertige Posts, Captions und Content-Strategien für Ihre Social-Media-Kanäle. Sie veröffentlichen – ich liefere den Inhalt.</p>
-<span class="service-tag">→ Instagram, TikTok & mehr</span>
-</div>
-<div class="service-card">
-<div class="service-icon">✦</div>
-<h3>Logo & Design</h3>
-<p>Neue Logos von Grund auf oder die Überarbeitung Ihres bestehenden Auftritts – klar, wiedererkennbar und passend zu Ihrer Marke.</p>
-<span class="service-tag">→ Entwurf, Revision & Export</span>
-</div>
-</div>
+  <p class="section-label reveal">Leistungen</p>
+  <h2 class="reveal">Was ich für Sie tue.</h2>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">🛒</div>
+      <h3>Online-Shop Erstellung</h3>
+      <p>Ich baue Ihren professionellen Shop mit Shopify oder WooCommerce – von der Einrichtung bis zu den fertigen Produktbeschreibungen. Sie müssen nur noch verkaufen.</p>
+      <span class="service-tag">→ Shopify & WooCommerce</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✍️</div>
+      <h3>Texte & Copywriting</h3>
+      <p>Überzeugende Website-Texte, Produktbeschreibungen und Landingpages, die Besucher in Kunden verwandeln. Klar, präzise, wirkungsvoll.</p>
+      <span class="service-tag">→ Website, Shop, E-Mail</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Content</h3>
+      <p>Fertige Posts, Captions und Content-Strategien für Ihre Social-Media-Kanäle. Sie veröffentlichen – ich liefere den Inhalt.</p>
+      <span class="service-tag">→ Instagram, TikTok & mehr</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✦</div>
+      <h3>Logo & Design</h3>
+      <p>Neue Logos von Grund auf oder die Überarbeitung Ihres bestehenden Auftritts – klar, wiedererkennbar und passend zu Ihrer Marke.</p>
+      <span class="service-tag">→ Entwurf, Revision & Export</span>
+    </div>
+  </div>
 </section>
 
 <section class="pricing" id="pakete">
-<p class="section-label reveal">Pakete</p>
-<h2 class="reveal">Preise & Pakete.</h2>
-<p class="pricing-intro reveal">Jedes Projekt ist anders – deshalb starten alle Preise flexibel mit „ab". Klicken Sie auf ein Paket für Details zu Inhalten, Vorteilen und individuellen Anpassungen.</p>
-<div class="pricing-grid">
-<article class="pricing-card reveal" data-package="basic" tabindex="0" role="button" aria-expanded="false">
-<div class="pricing-header">
-<h3>Basic</h3>
-<div class="pricing-price"><span>ab </span><span class="amount">29€</span></div>
-<p class="pricing-teaser">Ideal für kleine Aufgaben, erste Online-Schritte oder punktuelle Unterstützung.</p>
-</div>
-<div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
-<div class="pricing-details">
-<div class="pricing-details-inner">
-<h4>Enthalten</h4>
-<ul>
-<li>Kurze Textoptimierung oder Social-Media-Post (1–3 Stück)</li>
-<li>Einfache Formatierung & Korrekturlesen</li>
-<li>Eine Feedback-Runde inklusive</li>
-</ul>
-<h4>Ihre Vorteile</h4>
-<p>Schneller Einstieg ohne großes Budget – Sie testen die Zusammenarbeit risikoarm und erhalten sofort nutzbaren Output.</p>
-<h4>Warum preiswert?</h4>
-<p>Klar abgegrenzter Umfang, effiziente Remote-Arbeit ohne Overhead – Sie zahlen nur für das, was Sie wirklich brauchen.</p>
-<h4>Individuelle Anpassung</h4>
-<p>Scope und Lieferumfang passen wir vor Start gemeinsam an – vom Einzeltext bis zu kleinen Content-Serien.</p>
-</div>
-</div>
-</article>
+  <p class="section-label reveal">Pakete</p>
+  <h2 class="reveal">Preise & Pakete.</h2>
+  <p class="pricing-intro reveal">Jedes Projekt ist anders – deshalb starten alle Preise flexibel mit „ab". Klicken Sie auf ein Paket für Details zu Inhalten, Vorteilen und individuellen Anpassungen.</p>
+  <div class="pricing-grid">
+    <article class="pricing-card reveal" data-package="basic" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Basic</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">29€</span></div>
+        <p class="pricing-teaser">Ideal für kleine Aufgaben, erste Online-Schritte oder punktuelle Unterstützung.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Kurze Textoptimierung oder Social-Media-Post (1–3 Stück)</li>
+            <li>Einfache Formatierung & Korrekturlesen</li>
+            <li>Eine Feedback-Runde inklusive</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Schneller Einstieg ohne großes Budget – Sie testen die Zusammenarbeit risikoarm und erhalten sofort nutzbaren Output.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Klar abgegrenzter Umfang, effiziente Remote-Arbeit ohne Overhead – Sie zahlen nur für das, was Sie wirklich brauchen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Scope und Lieferumfang passen wir vor Start gemeinsam an – vom Einzeltext bis zu kleinen Content-Serien.</p>
+        </div>
+      </div>
+    </article>
 
-<article class="pricing-card reveal reveal-delay-1" data-package="design" tabindex="0" role="button" aria-expanded="false">
-<div class="pricing-header">
-<h3>Design</h3>
-<div class="pricing-price"><span>ab </span><span class="amount">49€</span></div>
-<p class="pricing-teaser">Neues Logo oder Refresh Ihres bestehenden Logos – professionell, markengerecht und einsatzbereit.</p>
-</div>
-<div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
-<div class="pricing-details">
-<div class="pricing-details-inner">
-<h4>Enthalten</h4>
-<ul>
-<li>Logo-Neuentwurf oder Überarbeitung eines bestehenden Logos</li>
-<li>2–3 Designentwürfe zur Auswahl</li>
-<li>Export für Web & Print (PNG, SVG – nach Absprache)</li>
-<li>Eine Korrektur-Runde inklusive</li>
-</ul>
-<h4>Ihre Vorteile</h4>
-<p>Ein einheitlicher Auftritt ohne teure Design-Agentur – Ihre Marke wirkt von Anfang an professionell auf Website, Shop und Social Media.</p>
-<h4>Warum preiswert?</h4>
-<p>Fokussierter Logo-Umfang statt kompletter Corporate Identity – Sie erhalten genau das, was kleine Unternehmen und Selbstständige wirklich brauchen.</p>
-<h4>Individuelle Anpassung</h4>
-<p>Stil, Farben und Format richten wir nach Ihrer Branche und Ihren Wünschen aus – vom Minimal-Logo bis zur Modernisierung Ihres Bestands.</p>
-</div>
-</div>
-</article>
+    <article class="pricing-card reveal reveal-delay-1" data-package="design" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Design</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">49€</span></div>
+        <p class="pricing-teaser">Neues Logo oder Refresh Ihres bestehenden Logos – professionell, markengerecht und einsatzbereit.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Logo-Neuentwurf oder Überarbeitung eines bestehenden Logos</li>
+            <li>2–3 Designentwürfe zur Auswahl</li>
+            <li>Export für Web & Print (PNG, SVG – nach Absprache)</li>
+            <li>Eine Korrektur-Runde inklusive</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Ein einheitlicher Auftritt ohne teure Design-Agentur – Ihre Marke wirkt von Anfang an professionell auf Website, Shop und Social Media.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Fokussierter Logo-Umfang statt kompletter Corporate Identity – Sie erhalten genau das, was kleine Unternehmen und Selbstständige wirklich brauchen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Stil, Farben und Format richten wir nach Ihrer Branche und Ihren Wünschen aus – vom Minimal-Logo bis zur Modernisierung Ihres Bestands.</p>
+        </div>
+      </div>
+    </article>
 
-<article class="pricing-card featured reveal reveal-delay-2" data-package="standard" tabindex="0" role="button" aria-expanded="false">
-<div class="pricing-header">
-<span class="pricing-badge">Beliebt</span>
-<h3>Standard</h3>
-<div class="pricing-price"><span>ab </span><span class="amount">79€</span></div>
-<p class="pricing-teaser">Der Sweet Spot für Website-Texte, Shop-Inhalte oder einen kompletten Social-Media-Monat.</p>
-</div>
-<div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
-<div class="pricing-details">
-<div class="pricing-details-inner">
-<h4>Enthalten</h4>
-<ul>
-<li>Mehrseitige Texte, Produktbeschreibungen oder Landingpage-Copy</li>
-<li>Shop-Einrichtungshilfe oder Content-Paket (10+ Posts)</li>
-<li>Struktur, SEO-Basics & zwei Feedback-Runden</li>
-</ul>
-<h4>Ihre Vorteile</h4>
-<p>Professionelle Qualität zum fairen Festpreis-Rahmen – weniger Zeitaufwand für Sie, mehr Wirkung online.</p>
-<h4>Warum preiswert?</h4>
-<p>Durch erprobte Workflows und Fokus auf Kernleistungen entsteht hochwertiger Output ohne Agentur-Aufschlag.</p>
-<h4>Individuelle Anpassung</h4>
-<p>Leistungen, Kanäle und Lieferzeiten stimmen wir auf Ihre Branche und Zielgruppe ab – modular erweiterbar.</p>
-</div>
-</div>
-</article>
+    <article class="pricing-card featured reveal reveal-delay-2" data-package="standard" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <span class="pricing-badge">Beliebt</span>
+        <h3>Standard</h3>
+        <div class="pricing-price"><span>ab </span><span class="amount">79€</span></div>
+        <p class="pricing-teaser">Der Sweet Spot für Website-Texte, Shop-Inhalte oder einen kompletten Social-Media-Monat.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Mehrseitige Texte, Produktbeschreibungen oder Landingpage-Copy</li>
+            <li>Shop-Einrichtungshilfe oder Content-Paket (10+ Posts)</li>
+            <li>Struktur, SEO-Basics & zwei Feedback-Runden</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Professionelle Qualität zum fairen Festpreis-Rahmen – weniger Zeitaufwand für Sie, mehr Wirkung online.</p>
+          <h4>Warum preiswert?</h4>
+          <p>Durch erprobte Workflows und Fokus auf Kernleistungen entsteht hochwertiger Output ohne Agentur-Aufschlag.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Leistungen, Kanäle und Lieferzeiten stimmen wir auf Ihre Branche und Zielgruppe ab – modular erweiterbar.</p>
+        </div>
+      </div>
+    </article>
 
-<article class="pricing-card reveal reveal-delay-3" data-package="premium" tabindex="0" role="button" aria-expanded="false">
-<div class="pricing-header">
-<h3>Premium</h3>
-<div class="pricing-price"><span class="amount" style="-webkit-text-fill-color:var(--text);background:none;">Individuelle Anfrage</span></div>
-<p class="pricing-teaser">Komplette Shop-Projekte, umfassende Content-Strategien oder langfristige Betreuung.</p>
-</div>
-<div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
-<div class="pricing-details">
-<div class="pricing-details-inner">
-<h4>Enthalten</h4>
-<ul>
-<li>Vollständige Online-Shop-Erstellung (Shopify / WooCommerce)</li>
-<li>Ganzheitliche Text- & Content-Strategie über mehrere Kanäle</li>
-<li>Priorisierte Betreuung, Revisionen & optional laufende Pflege</li>
-</ul>
-<h4>Ihre Vorteile</h4>
-<p>Ein Ansprechpartner für alles Digitale – von der Idee bis live, ohne Koordinationschaos zwischen mehreren Dienstleistern.</p>
-<h4>Warum fair kalkuliert?</h4>
-<p>Sie erhalten ein maßgeschneidertes Angebot statt Pauschalpreis – jede Position ist nachvollziehbar und projektbezogen.</p>
-<h4>Individuelle Anpassung</h4>
-<p>Umfang, Timeline und Budget definieren wir gemeinsam – inklusive optionaler Folgepakete nach Go-live.</p>
-</div>
-</div>
-</article>
-</div>
-<p class="pricing-intro reveal" style="margin-top:2rem;margin-bottom:0;font-size:0.85rem;">Alle Preise verstehen sich als Richtwerte. Nach Ihrer Anfrage erhalten Sie ein verbindliches, auf Sie zugeschnittenes Angebot.</p>
+    <article class="pricing-card reveal reveal-delay-3" data-package="premium" tabindex="0" role="button" aria-expanded="false">
+      <div class="pricing-header">
+        <h3>Premium</h3>
+        <div class="pricing-price"><span class="amount" style="-webkit-text-fill-color:var(--text);background:none;">Individuelle Anfrage</span></div>
+        <p class="pricing-teaser">Komplette Shop-Projekte, umfassende Content-Strategien oder langfristige Betreuung.</p>
+      </div>
+      <div class="pricing-toggle"><span>Details anzeigen</span><span class="pricing-toggle-icon">▼</span></div>
+      <div class="pricing-details">
+        <div class="pricing-details-inner">
+          <h4>Enthalten</h4>
+          <ul>
+            <li>Vollständige Online-Shop-Erstellung (Shopify / WooCommerce)</li>
+            <li>Ganzheitliche Text- & Content-Strategie über mehrere Kanäle</li>
+            <li>Priorisierte Betreuung, Revisionen & optional laufende Pflege</li>
+          </ul>
+          <h4>Ihre Vorteile</h4>
+          <p>Ein Ansprechpartner für alles Digitale – von der Idee bis live, ohne Koordinationschaos zwischen mehreren Dienstleistern.</p>
+          <h4>Warum fair kalkuliert?</h4>
+          <p>Sie erhalten ein maßgeschneidertes Angebot statt Pauschalpreis – jede Position ist nachvollziehbar und projektbezogen.</p>
+          <h4>Individuelle Anpassung</h4>
+          <p>Umfang, Timeline und Budget definieren wir gemeinsam – inklusive optionaler Folgepakete nach Go-live.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="pricing-intro reveal" style="margin-top:2rem;margin-bottom:0;font-size:0.85rem;">Alle Preise verstehen sich als Richtwerte. Nach Ihrer Anfrage erhalten Sie ein verbindliches, auf Sie zugeschnittenes Angebot.</p>
 </section>
 
 <section class="cta-band">
-<div class="cta-inner reveal">
-<div>
-<h3>Passendes Paket gefunden?</h3>
-<p>Transparente Preise ab 29 € – jedes Projekt wird individuell auf Ihre Ziele abgestimmt.</p>
-</div>
-<a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
-</div>
+  <div class="cta-inner reveal">
+    <div>
+      <h3>Passendes Paket gefunden?</h3>
+      <p>Transparente Preise ab 29 € – jedes Projekt wird individuell auf Ihre Ziele abgestimmt.</p>
+    </div>
+    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
+  </div>
 </section>
 
 <section class="process" id="ablauf">
-<p class="section-label reveal">Ablauf</p>
-<h2 class="reveal">Einfach. Schnell. Digital.</h2>
-<div class="steps">
-<div class="step reveal">
-<div class="step-num">01</div>
-<h3>Anfrage über Formular</h3>
-<p>Sie füllen das Kontaktformular aus oder schreiben per E-Mail – kein Anruf, kein Meeting, alles schriftlich.</p>
-</div>
-<div class="step reveal">
-<div class="step-num">02</div>
-<h3>Angebot & Abstimmung</h3>
-<p>Ich schicke Ihnen ein konkretes Angebot. Fragen klären wir per E-Mail – schnell und unkompliziert.</p>
-</div>
-<div class="step reveal">
-<div class="step-num">03</div>
-<h3>Umsetzung</h3>
-<p>Ich erledige alles. Sie erhalten das fertige Ergebnis – pünktlich und ohne Aufwand für Sie.</p>
-</div>
-<div class="step reveal">
-<div class="step-num">04</div>
-<h3>Fertig & live</h3>
-<p>Ihr Shop, Ihre Texte, Ihr Content – einsatzbereit. Bei Bedarf bleibe ich als langfristiger Partner an Ihrer Seite.</p>
-</div>
-</div>
+  <p class="section-label reveal">Ablauf</p>
+  <h2 class="reveal">Einfach. Schnell. Digital.</h2>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Anfrage über Formular</h3>
+      <p>Sie füllen das Kontaktformular aus oder schreiben per E-Mail – kein Anruf, kein Meeting, alles schriftlich.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <h3>Angebot & Abstimmung</h3>
+      <p>Ich schicke Ihnen ein konkretes Angebot. Fragen klären wir per E-Mail – schnell und unkompliziert.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <h3>Umsetzung</h3>
+      <p>Ich erledige alles. Sie erhalten das fertige Ergebnis – pünktlich und ohne Aufwand für Sie.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <h3>Fertig & live</h3>
+      <p>Ihr Shop, Ihre Texte, Ihr Content – einsatzbereit. Bei Bedarf bleibe ich als langfristiger Partner an Ihrer Seite.</p>
+    </div>
+  </div>
 </section>
 
 <section class="testimonials" id="bewertungen">
-<p class="section-label reveal">Kundenstimmen</p>
-<h2 class="reveal">Was Kunden sagen.</h2>
-<div class="testimonials-grid">
-<div class="testimonial-card reveal">
-<div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-<p class="testimonial-text">„Unser Shopify-Shop war in wenigen Tagen online. Die Produkttexte klingen professionell – und ich musste kein einziges Meeting dafür einplanen. Genau das, was ich als Einzelunternehmerin brauchte."</p>
-<div class="testimonial-author">
-<div class="testimonial-avatar">SK</div>
-<div>
-<div class="testimonial-name">Sarah K.</div>
-<div class="testimonial-role">Handmade-Shop, München</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card reveal reveal-delay-1">
-<div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-<p class="testimonial-text">„Die Landingpa
+  <p class="section-label reveal">Kundenstimmen</p>
+  <h2 class="reveal">Was Kunden sagen.</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Unser Shopify-Shop war in wenigen Tagen online. Die Produkttexte klingen professionell – und ich musste kein einziges Meeting dafür einplanen. Genau das, was ich als Einzelunternehmerin brauchte."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SK</div>
+        <div>
+          <div class="testimonial-name">Sarah K.</div>
+          <div class="testimonial-role">Handmade-Shop, München</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Die Landingpage-Texte haben unsere Anfragen spürbar erhöht. Kommunikation lief ausschließlich per E-Mail, Antworten kamen schnell und auf den Punkt. Sehr unkompliziert."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MT</div>
+        <div>
+          <div class="testimonial-name">Markus T.</div>
+          <div class="testimonial-role">IT-Dienstleister, Hamburg</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <p class="testimonial-text">„Ein Monat Social-Media-Content, fertig zum Posten – inklusive Captions, die wirklich zu unserer Marke passen. Preis-Leistung für ein kleines Team unschlagbar."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">LB</div>
+        <div>
+          <div class="testimonial-name">Lisa B.</div>
+          <div class="testimonial-role">Café & Catering, Berlin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="contact" id="kontakt">
+  <p class="section-label reveal">Kontakt</p>
+  <h2 class="reveal">Bereit loszulegen?</h2>
+  <p class="contact-sub reveal">Füllen Sie das Formular aus – ich melde mich innerhalb von 24 Stunden mit einem passenden Angebot.</p>
+  <div class="contact-box reveal">
+    <form id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Ihr Name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" required placeholder="ihre@email.de" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="company">Unternehmen <span class="optional">(optional)</span></label>
+        <input type="text" id="company" name="company" placeholder="Firmenname" autocomplete="organization">
+      </div>
+      <div class="form-group">
+        <label for="service">Gewünschte Leistung *</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Bitte wählen …</option>
+          <option value="Online-Shop">Online-Shop Erstellung</option>
+          <option value="Texte & Copywriting">Texte & Copywriting</option>
+          <option value="Social Media">Social Media Content</option>
+          <option value="Logo & Design">Logo & Design</option>
+          <option value="Kombination">Kombination mehrerer Leistungen</option>
+          <option value="Sonstiges">Sonstiges / Beratung</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="project">Beschreibung des Projekts *</label>
+        <textarea id="project" name="project" required placeholder="Was möchten Sie erreichen? Welche Ziele, Fristen oder Besonderheiten gibt es?"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="" disabled selected>Budget-Rahmen wählen …</option>
+          <option value="unter 50€">unter 50 €</option>
+          <option value="50–100€">50 – 100 €</option>
+          <option value="100–250€">100 – 250 €</option>
+          <option value="250–500€">250 – 500 €</option>
+          <option value="über 500€">über 500 €</option>
+          <option value="noch unklar">Noch unklar / Beratung gewünscht</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Anfrage absenden</button>
+    </form>
+    <div class="contact-alt">
+      <p>Oder direkt per E-Mail:</p>
+      <a href="mailto:visib.ly@outlook.com" class="contact-email">✉️ visib.ly@outlook.com</a>
+      <p class="contact-note">Komplett remote · Kein Meeting · Antwort innerhalb 24h</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="reveal">Häufige Fragen.</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Warum stehen bei den Paketen nur „ab"-Preise?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Jedes Projekt hat unterschiedlichen Umfang – von einem kurzen Text bis zum kompletten Shop. Die „ab"-Preise geben Orientierung; nach Ihrer Anfrage erhalten Sie ein festes, transparentes Angebot ohne versteckte Kosten.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Muss ich telefonieren oder an Meetings teilnehmen?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Nein. Die gesamte Abstimmung läuft per E-Mail oder über das Kontaktformular – schnell, dokumentiert und ohne Termindruck.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Wie schnell bekomme ich eine Antwort?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>In der Regel innerhalb von 24 Stunden an Werktagen. Bei dringenden Projekten vermerken Sie das einfach im Formular.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Kann ich Leistungen aus verschiedenen Paketen kombinieren?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Ja. Shop, Texte und Social Media lassen sich flexibel kombinieren. Beschreiben Sie Ihr Vorhaben im Formular – ich schlage das passende Paket vor.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Welche Zahlungsmethoden gibt es?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Die Details klären wir im Angebot – üblich sind Rechnung mit Überweisung oder Teilzahlungen bei größeren Projekten. Alles wird vor Start schriftlich festgehalten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="privacy-page" id="datenschutz">
+  <div class="privacy-inner">
+    <a href="#" class="privacy-close">← Zurück zur Website</a>
+    <p class="section-label">Rechtliches</p>
+    <h2>Datenschutz.</h2>
+
+    <h3>1. Allgemeine Hinweise</h3>
+    <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Vorschriften.</p>
+    <p>Beim Besuch dieser Website können technische Daten wie Browsertyp, Betriebssystem, Uhrzeit des Zugriffs oder IP-Adresse automatisch durch den Hosting-Anbieter verarbeitet werden.</p>
+
+    <h3>2. Verantwortliche Stelle</h3>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
+    <p><strong>Visibly</strong><br>E-Mail: visib.ly@outlook.com</p>
+
+    <h3>3. Kontaktaufnahme</h3>
+    <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die übermittelten Daten werden nicht an Dritte weitergegeben.</p>
+
+    <h3>4. Hosting</h3>
+    <p>Diese Website wird bei einem externen Hosting-Anbieter betrieben. Dabei können Server-Logfiles automatisch gespeichert werden.</p>
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Browserinformationen</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>aufgerufene Seiten</li>
+    </ul>
+    <p>Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
+
+    <h3>5. Externe Schriftarten</h3>
+    <p>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Laden der Website kann eine Verbindung zu Servern von Google hergestellt werden.</p>
+    <p>Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+
+    <h3>6. Ihre Rechte</h3>
+    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Zur Ausübung genügt eine formlose E-Mail.</p>
+
+    <h3>7. Änderungen</h3>
+    <p>Diese Datenschutzerklärung kann bei technischen oder rechtlichen Änderungen angepasst werden.</p>
+    <p>Stand: 2026</p>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo" style="font-size:1rem;">Visib<span>.</span>ly</a>
+  <p>© 2026 Visibly · <a href="#pakete" style="color:var(--muted);text-decoration:none;">Pakete</a> · <a href="#faq" style="color:var(--muted);text-decoration:none;">FAQ</a> · <a href="#kontakt" style="color:var(--muted);text-decoration:none;">Kontakt</a> · <a href="#datenschutz" style="color:var(--muted);text-decoration:none;">Datenschutz</a></p>
+</footer>
+
+<script>
+
+  // Immer oben starten nach Seiten-Reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const delay = e.target.classList.contains('reveal-delay-1') ? 80
+          : e.target.classList.contains('reveal-delay-2') ? 160
+          : e.target.classList.contains('reveal-delay-3') ? 240 : 0;
+        setTimeout(() => e.target.classList.add('visible'), delay);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
+    });
+  });
+
+  document.querySelectorAll('.pricing-card').forEach(card => {
+    const toggle = () => {
+      const isOpen = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', isOpen);
+      card.querySelector('.pricing-toggle span').textContent = isOpen ? 'Details ausblenden' : 'Details anzeigen';
+    };
+    card.addEventListener('click', (e) => { if (e.target.closest('a')) return; toggle(); });
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const company = form.company.value.trim();
+    const service = form.service.value;
+    const project = form.project.value.trim();
+    const budget = form.budget.value;
+    const subject = encodeURIComponent('Projektanfrage – ' + service);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'E-Mail: ' + email + '\n' +
+      (company ? 'Unternehmen: ' + company + '\n' : '') +
+      'Leistung: ' + service + '\n' +
+      'Budget: ' + budget + '\n\n' +
+      'Projektbeschreibung:\n' + project
+    );
+    window.location.href = 'mailto:visib.ly@outlook.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
