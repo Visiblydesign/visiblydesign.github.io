@@ -140,7 +140,7 @@
 
   /* SERVICES */
   .services { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.35rem; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.22rem; }
   h2 { font-weight: 650; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 3rem; }
 
   .services-grid {
@@ -353,7 +353,7 @@
 
   @media (max-width: 380px) {
     .hero { padding-top: 2.85rem !important; }
-    .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; margin-bottom: 0.3rem !important; }
+    .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.7rem; margin-bottom: 0.22rem !important; }
     h1 { font-size: 1.85rem; }
     .hero-sub { font-size: 1rem; }
     .stats { gap: 1rem 1.25rem; }
@@ -701,7 +701,7 @@
     }
 
     .hero-badge {
-      margin-bottom: 0.45rem !important;
+      margin-bottom: 0.22rem !important;
       font-size: 0.74rem !important;
       padding: 0.38rem 0.8rem !important;
     }
@@ -709,7 +709,7 @@
     h1 {
       font-size: 2rem !important;
       line-height: 1.2 !important;
-      margin-bottom: 1.45rem !important;
+      margin-bottom: 1.1rem !important;
       padding: 0 0.25rem !important;
     }
 
@@ -804,6 +804,159 @@
       font-size: 0.88rem !important;
       margin-bottom: 2rem !important;
       letter-spacing: 0.14em !important;
+    }
+  }
+
+
+  /* FINAL POLISHED MOBILE HERO - CLEAN, EVEN, VISIBLE */
+  @media (max-width: 640px) {
+    .hero {
+      min-height: 100svh !important;
+      padding: 1.35rem 5vw 1.7rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    .hero-badge {
+      margin: 0 0 0.65rem !important;
+      font-size: 0.72rem !important;
+      line-height: 1.2 !important;
+      padding: 0.36rem 0.75rem !important;
+    }
+
+    .hero-stars {
+      margin: 0 0 1.05rem !important;
+      color: #f5c542 !important;
+      font-size: 0.82rem !important;
+      letter-spacing: 0.14em !important;
+      line-height: 1 !important;
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 8vw, 2.15rem) !important;
+      line-height: 1.16 !important;
+      margin: 0 0 1.25rem !important;
+      padding: 0 0.2rem !important;
+      max-width: 100% !important;
+    }
+
+    .hero-sub {
+      margin: 0 auto !important;
+      max-width: 92% !important;
+      font-size: 0.96rem !important;
+      line-height: 1.56 !important;
+    }
+
+    .stats {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      width: 100% !important;
+      max-width: 350px !important;
+      gap: 0.55rem !important;
+      margin: 1.45rem auto 0 !important;
+      padding: 0.9rem 0 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .stat-item {
+      min-width: 0 !important;
+      text-align: center !important;
+    }
+
+    .stat-num {
+      font-size: 1.08rem !important;
+      line-height: 1.1 !important;
+    }
+
+    .stat-num .stat-prefix {
+      font-size: 0.64rem !important;
+      margin-right: 0.06rem !important;
+    }
+
+    .stat-label {
+      margin-top: 0.25rem !important;
+      font-size: 0.55rem !important;
+      line-height: 1.2 !important;
+      letter-spacing: 0.035em !important;
+    }
+
+    .hero-actions {
+      margin: 1.45rem auto 0 !important;
+      width: 100% !important;
+      max-width: 280px !important;
+      gap: 0.65rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .hero-actions a {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 0.72rem 1.25rem !important;
+      font-size: 0.9rem !important;
+      line-height: 1.25 !important;
+    }
+
+    .hero-scroll,
+    .mobile-proof,
+    .hero-info {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .hero {
+      padding: 1rem 5vw 1.25rem !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 0.5rem !important;
+      font-size: 0.66rem !important;
+      padding: 0.32rem 0.65rem !important;
+    }
+
+    .hero-stars {
+      margin-bottom: 0.8rem !important;
+      font-size: 0.76rem !important;
+    }
+
+    h1 {
+      font-size: 1.72rem !important;
+      margin-bottom: 0.95rem !important;
+    }
+
+    .hero-sub {
+      font-size: 0.88rem !important;
+      line-height: 1.48 !important;
+      max-width: 94% !important;
+    }
+
+    .stats {
+      margin-top: 1.05rem !important;
+      padding-top: 0.7rem !important;
+      gap: 0.35rem !important;
+    }
+
+    .stat-num {
+      font-size: 0.92rem !important;
+    }
+
+    .stat-label {
+      font-size: 0.5rem !important;
+    }
+
+    .hero-actions {
+      margin-top: 1.05rem !important;
+      gap: 0.55rem !important;
+      max-width: 270px !important;
+    }
+
+    .hero-actions a {
+      padding: 0.65rem 1rem !important;
+      font-size: 0.85rem !important;
     }
   }
 
