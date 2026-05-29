@@ -994,14 +994,21 @@
   }
 
 
-/* FORCE MORE SPACE BETWEEN HEADLINE AND FIRST TEXT BLOCK */
-@media (max-width: 640px){
-  h1{
-    margin-bottom: 4rem !important;
+/* FINAL FIX: SICHTBARER ABSTAND HEADLINE ZU ERSTEM TEXTBLOCK */
+@media (max-width: 640px) {
+  .hero h1 {
+    margin-bottom: 0 !important;
   }
 
-  .hero-sub{
-    margin-top: 0 !important;
+  .hero .hero-sub {
+    margin-top: 3.2rem !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero .hero-sub {
+    margin-top: 2.4rem !important;
   }
 }
 
