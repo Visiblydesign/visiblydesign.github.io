@@ -849,6 +849,150 @@
   }
 }
 
+
+  /* FINAL MOBILE HERO BALANCE */
+  @media (max-width: 640px) {
+    .hero {
+      min-height: auto !important;
+      padding: 1.15rem 5vw 2.15rem !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .hero-badge {
+      margin: 0 auto 1.55rem !important;
+      font-size: 0.72rem !important;
+      line-height: 1.2 !important;
+      padding: 0.38rem 0.82rem !important;
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.17 !important;
+      margin: 0 auto 1.45rem !important;
+      padding: 0 0.2rem !important;
+      max-width: 100% !important;
+      text-align: center !important;
+    }
+
+    .hero-sub {
+      max-width: 92% !important;
+      margin: 0 auto !important;
+      font-size: 0.96rem !important;
+      line-height: 1.58 !important;
+      text-align: center !important;
+    }
+
+    .hero-actions {
+      margin: 1.55rem auto 0 !important;
+      width: 100% !important;
+      max-width: 285px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 0.72rem !important;
+    }
+
+    .hero-actions a {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 0.76rem 1.2rem !important;
+      font-size: 0.9rem !important;
+      line-height: 1.25 !important;
+    }
+
+    .stats {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      width: 100% !important;
+      max-width: 340px !important;
+      gap: 0.55rem !important;
+      margin: 1.35rem auto 0 !important;
+      padding: 0.85rem 0 0 !important;
+      border-top: 1px solid var(--border) !important;
+    }
+
+    .stat-item {
+      min-width: 0 !important;
+      text-align: center !important;
+    }
+
+    .stat-num {
+      font-size: 1.05rem !important;
+      line-height: 1.1 !important;
+    }
+
+    .stat-num .stat-prefix {
+      font-size: 0.64rem !important;
+      margin-right: 0.06rem !important;
+    }
+
+    .stat-label {
+      margin-top: 0.25rem !important;
+      font-size: 0.54rem !important;
+      line-height: 1.2 !important;
+      letter-spacing: 0.035em !important;
+    }
+
+    .hero-scroll,
+    .mobile-proof,
+    .hero-info {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .hero {
+      padding: 0.85rem 5vw 1.45rem !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 1.1rem !important;
+      font-size: 0.66rem !important;
+      padding: 0.32rem 0.68rem !important;
+    }
+
+    h1 {
+      font-size: 1.72rem !important;
+      margin-bottom: 1.05rem !important;
+    }
+
+    .hero-sub {
+      font-size: 0.86rem !important;
+      line-height: 1.5 !important;
+      max-width: 94% !important;
+    }
+
+    .hero-actions {
+      margin-top: 1.15rem !important;
+      gap: 0.58rem !important;
+      max-width: 270px !important;
+    }
+
+    .hero-actions a {
+      padding: 0.66rem 1rem !important;
+      font-size: 0.84rem !important;
+    }
+
+    .stats {
+      margin-top: 0.95rem !important;
+      padding-top: 0.65rem !important;
+      gap: 0.35rem !important;
+    }
+
+    .stat-num {
+      font-size: 0.9rem !important;
+    }
+
+    .stat-label {
+      font-size: 0.49rem !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -873,7 +1017,11 @@
   <div class="hero-badge">Shop · Texte · Logos · Social Media</div>
   <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
   <p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
-  </p>
+  <div class="hero-actions">
+    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
+    <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
+  </div>
+
   <div class="stats">
     <div class="stat-item">
       <div class="stat-num"><span class="stat-prefix">ab</span>29<span>€</span></div>
@@ -887,10 +1035,6 @@
       <div class="stat-num">100<span>%</span></div>
       <div class="stat-label">Schriftlich</div>
     </div>
-  </div>
-  <div class="hero-actions">
-    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
-    <a href="#pakete" class="btn-secondary">Pakete ansehen</a>
   </div>
 </section>
 
