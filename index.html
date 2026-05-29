@@ -685,6 +685,52 @@
   }
 }
 
+
+/* FINAL FIXED MOBILE HERO — ONE RELIABLE GAP */
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto !important;
+    padding: 1.25rem 5vw 2rem !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-badge {
+    margin: 0 auto 2.1rem !important;
+  }
+
+  .hero h1 {
+    margin: 0 auto !important;
+  }
+
+  .hero-gap {
+    display: block !important;
+    width: 100% !important;
+    height: 2.4rem !important;
+    flex: 0 0 2.4rem !important;
+  }
+
+  .hero-sub {
+    margin: 0 auto !important;
+  }
+
+  .hero-actions {
+    margin-top: 1.8rem !important;
+  }
+
+  .stats {
+    margin-top: 1.45rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-gap {
+    height: 1.9rem !important;
+    flex-basis: 1.9rem !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -708,6 +754,7 @@
 <section class="hero">
   <div class="hero-badge">Shop · Texte · Logos · Social Media</div>
   <h1>Ihre Marke.<br><span class="gradient">Online sichtbar.</span><br>Überzeugend.</h1>
+  <div class="hero-gap" aria-hidden="true"></div>
   <p class="hero-sub">Mehr Reichweite und mehr Anfragen – mit professionellen Shops, Texten und Content. Alles aus einer Hand, ohne Meetings und ohne Agentur-Aufwand.</p>
   <div class="hero-actions">
     <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
