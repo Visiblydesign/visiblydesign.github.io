@@ -450,7 +450,7 @@
       width: 100% !important;
       max-width: 360px !important;
       gap: 0.5rem !important;
-      margin: 2.2rem auto 0 !important;
+      margin: 2rem auto 0 !important;
       padding: 1.25rem 0 0 !important;
       border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
@@ -690,7 +690,7 @@
             <li>Eine Feedback-Runde inklusive</li>
           </ul>
           <h4>Ihre Vorteile</h4>
-          <p>Schneller Einstieg ohne großes Budget – Sie testen die Zusammenarbeit risikoarm und erhalten sofort nutzbaten Output.</p>
+          <p>Schneller Einstieg ohne großes Budget – Sie testen die Zusammenarbeit risikoarm und erhalten sofort nutzbaren Output.</p>
           <h4>Warum preiswert?</h4>
           <p>Klar abgegrenzter Umfang, effiziente Remote-Arbeit ohne Overhead – Sie zahlen nur für das, was Sie wirklich brauchen.</p>
           <h4>Individuelle Anpassung</h4>
@@ -859,4 +859,254 @@
 <section class="contact" id="kontakt">
   <p class="section-label reveal">Kontakt</p>
   <h2 class="reveal">Bereit loszulegen?</h2>
-  <p class="contact-sub reveal">Fülle
+  <p class="contact-sub reveal">Füllen Sie das Formular aus – ich melde mich innerhalb von 24 Stunden mit einem passenden Angebot.</p>
+  <div class="contact-box reveal">
+    <form id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Ihr Name" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" required placeholder="ihre@email.de" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="company">Unternehmen <span class="optional">(optional)</span></label>
+        <input type="text" id="company" name="company" placeholder="Firmenname" autocomplete="organization">
+      </div>
+      <div class="form-group">
+        <label for="service">Gewünschte Leistung *</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Bitte wählen …</option>
+          <option value="Online-Shop">Online-Shop Erstellung</option>
+          <option value="Texte & Copywriting">Texte & Copywriting</option>
+          <option value="Social Media">Social Media Content</option>
+          <option value="Logo & Design">Logo & Design</option>
+          <option value="Kombination">Kombination mehrerer Leistungen</option>
+          <option value="Sonstiges">Sonstiges / Beratung</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="project">Beschreibung des Projekts *</label>
+        <textarea id="project" name="project" required placeholder="Was möchten Sie erreichen? Welche Ziele, Fristen oder Besonderheiten gibt es?"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="" disabled selected>Budget-Rahmen wählen …</option>
+          <option value="unter 50€">unter 50 €</option>
+          <option value="50–100€">50 – 100 €</option>
+          <option value="100–250€">100 – 250 €</option>
+          <option value="250–500€">250 – 500 €</option>
+          <option value="über 500€">über 500 €</option>
+          <option value="noch unklar">Noch unklar / Beratung gewünscht</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Anfrage absenden</button>
+    </form>
+    <div class="contact-alt">
+      <p>Oder direkt per E-Mail:</p>
+      <a href="mailto:visib.ly@outlook.com" class="contact-email">✉️ visib.ly@outlook.com</a>
+      <p class="contact-note">Komplett remote · Kein Meeting · Antwort innerhalb 24h</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="reveal">Häufige Fragen.</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Warum stehen bei den Paketen nur „ab"-Preise?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Jedes Projekt hat unterschiedlichen Umfang – von einem kurzen Text bis zum kompletten Shop. Die „ab"-Preise geben Orientierung; nach Ihrer Anfrage erhalten Sie ein festes, transparentes Angebot ohne versteckte Kosten.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Muss ich telefonieren oder an Meetings teilnehmen?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Nein. Die gesamte Abstimmung läuft per E-Mail oder über das Kontaktformular – schnell, dokumentiert und ohne Termindruck.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Wie schnell bekomme ich eine Antwort?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>In der Regel innerhalb von 24 Stunden an Werktagen. Bei dringenden Projekten vermerken Sie das einfach im Formular.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Kann ich Leistungen aus verschiedenen Paketen kombinieren?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Ja. Shop, Texte und Social Media lassen sich flexibel kombinieren. Beschreiben Sie Ihr Vorhaben im Formular – ich schlage das passende Paket vor.</p>
+      </div>
+    </div>
+    <div class="faq-item reveal">
+      <button type="button" class="faq-question" aria-expanded="false">
+        Welche Zahlungsmethoden gibt es?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Die Details klären wir im Angebot – üblich sind Rechnung mit Überweisung oder Teilzahlungen bei größeren Projekten. Alles wird vor Start schriftlich festgehalten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy-page" id="datenschutz">
+  <div class="privacy-inner">
+    <a href="#" class="privacy-close">← Zurück zur Website</a>
+    <p class="section-label">Rechtliches</p>
+    <h2>Datenschutz.</h2>
+
+    <h3>1. Allgemeine Hinweise</h3>
+    <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Vorschriften.</p>
+    <p>Beim Besuch dieser Website können technische Daten wie Browsertyp, Betriebssystem, Uhrzeit des Zugriffs oder IP-Adresse automatisch durch den Hosting-Anbieter verarbeitet werden.</p>
+
+    <h3>2. Verantwortliche Stelle</h3>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
+    <p><strong>Visibly</strong><br>E-Mail: visib.ly@outlook.com</p>
+
+    <h3>3. Kontaktaufnahme</h3>
+    <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die übermittelten Daten werden nicht an Dritte weitergegeben.</p>
+
+    <h3>4. Hosting</h3>
+    <p>Diese Website wird bei einem externen Hosting-Anbieter betrieben. Dabei können Server-Logfiles automatisch gespeichert werden.</p>
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Browserinformationen</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>aufgerufene Seiten</li>
+    </ul>
+    <p>Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
+
+    <h3>5. Externe Schriftarten</h3>
+    <p>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Laden der Website kann eine Verbindung zu Servern von Google hergestellt werden.</p>
+    <p>Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+
+    <h3>6. Ihre Rechte</h3>
+    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Zur Ausübung genügt eine formlose E-Mail.</p>
+
+    <h3>7. Ihre Änderungen</h3>
+    <p>Diese Datenschutzerklärung kann bei technischen oder rechtlichen Änderungen angepasst werden.</p>
+    <p>Stand: 2026</p>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo" style="font-size:1rem;">Visib<span>.</span>ly</a>
+  <p>© 2026 Visibly · <a href="#pakete" style="color:var(--muted);text-decoration:none;">Pakete</a> · <a href="#faq" style="color:var(--muted);text-decoration:none;">FAQ</a> · <a href="#kontakt" style="color:var(--muted);text-decoration:none;">Kontakt</a> · <a href="#datenschutz" style="color:var(--muted);text-decoration:none;">Datenschutz</a></p>
+</footer>
+
+<script>
+  // Immer oben starten nach Seiten-Reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const delay = e.target.classList.contains('reveal-delay-1') ? 80
+          : e.target.classList.contains('reveal-delay-2') ? 160
+          : e.target.classList.contains('reveal-delay-3') ? 240 : 0;
+        setTimeout(() => e.target.classList.add('visible'), delay);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Menü-Logik sichern
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+        navToggle.textContent = open ? '✕' : '☰';
+      });
+
+      // Menü schließen wenn ein Link geklickt wird
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = '☰';
+        });
+      });
+
+      // Menü schließen wenn man außerhalb klickt
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = '☰';
+        }
+      });
+    }
+  });
+
+  document.querySelectorAll('.pricing-card').forEach(card => {
+    const toggle = () => {
+      const isOpen = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', isOpen);
+      card.querySelector('.pricing-toggle span').textContent = isOpen ? 'Details ausblenden' : 'Details anzeigen';
+    };
+    card.addEventListener('click', (e) => { if (e.target.closest('a')) return; toggle(); });
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const company = form.company.value.trim();
+    const service = form.service.value;
+    const project = form.project.value.trim();
+    const budget = form.budget.value;
+    const subject = encodeURIComponent('Projektanfrage – ' + service);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'E-Mail: ' + email + '\n' +
+      (company ? 'Unternehmen: ' + company + '\n' : '') +
+      'Leistung: ' + service + '\n' +
+      'Budget: ' + budget + '\n\n' +
+      'Projektbeschreibung:\n' + project
+    );
+    window.location.href = 'mailto:visib.ly@outlook.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
