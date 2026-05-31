@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Visibly-Stand: 2026-05-26h (spacing-fix) -->
+<!-- Visibly-Stand: 2026-05-31 (unified-premium-style) -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -12,13 +12,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #030611;
+    --bg: #03050c;
     --surface: #0a0f1d;
     --accent: #2f62ff;
     --accent2: #00e5c3;
     --text: #ffffff;
     --muted: #8fa5d9;
-    --border: rgba(79, 142, 255, 0.15);
+    --border: rgba(47, 98, 255, 0.15);
   }
 
   html { scroll-behavior: smooth; }
@@ -48,14 +48,20 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 5vw;
+    padding: 1.1rem 5vw;
     backdrop-filter: blur(20px);
-    background: rgba(3, 6, 17, 0.75);
+    background: rgba(3, 5, 12, 0.75);
     border-bottom: 1px solid var(--border);
   }
 
   .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
   .logo span { color: var(--accent); }
+
+  .nav-right-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
 
   nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
   nav a:hover { color: var(--text); }
@@ -109,7 +115,7 @@
     font-weight: 800; font-size: clamp(2.2rem, 6vw, 4.2rem);
     line-height: 1.15; letter-spacing: -0.02em; max-width: 820px;
     word-break: keep-all; overflow-wrap: break-word; padding: 0 1.5rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
     animation: fadeUp 0.6s 0.1s ease both;
   }
   h1 .gradient {
@@ -117,7 +123,7 @@
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
 
-  .hero-sub { margin-top: 0.2rem; color: var(--muted); font-size: 1.05rem; max-width: 600px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-sub { margin-top: 0.25rem; color: var(--muted); font-size: 1.05rem; max-width: 600px; line-height: 1.6; animation: fadeUp 0.6s 0.2s ease both; }
   .hero-actions { display: flex; gap: 0.85rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s 0.3s ease both; width: 100%; max-width: 320px; }
   
   .btn-primary { 
@@ -385,7 +391,7 @@
   }
 
   @media (max-width: 900px) {
-    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 5vw 1.25rem; background: rgba(3, 6, 17, 0.98); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); z-index: 1000 !important; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 5vw 1.25rem; background: rgba(3, 5, 12, 0.98); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); z-index: 1000 !important; }
     .nav-links.open { display: flex !important; }
     .nav-links a { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
     .nav-links a:last-child { border-bottom: none; }
@@ -415,7 +421,7 @@
     h1 {
       font-size: 2.1rem !important;
       line-height: 1.15 !important;
-      margin: 0 auto !important;
+      margin: 0 auto 0rem !important;
       padding: 0 0.2rem !important;
       max-width: 100% !important;
     }
@@ -585,14 +591,16 @@
 
 <nav>
   <a href="#" class="logo">Visib<span>.</span>ly</a>
-  <button type="button" class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <div class="nav-right-wrapper">
+    <a href="#kontakt" class="nav-cta">Kontakt</a>
+    <button type="button" class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
   <div class="nav-links" id="nav-links">
     <a href="#leistungen">Leistungen</a>
     <a href="#pakete">Pakete</a>
     <a href="#ablauf">Ablauf</a>
     <a href="#faq">FAQ</a>
     <a href="#datenschutz">Datenschutz</a>
-    <a href="#kontakt" class="nav-cta">Kontakt</a>
   </div>
 </nav>
 
@@ -857,7 +865,7 @@
 </section>
 
 <section class="contact" id="kontakt">
-  <p class="section-label reveal">Contact</p>
+  <p class="section-label reveal">Kontakt</p>
   <h2 class="reveal">Bereit loszulegen?</h2>
   <p class="contact-sub reveal">Füllen Sie das Formular aus – ich melde mich innerhalb von 24 Stunden mit einem passenden Angebot.</p>
   <div class="contact-box reveal">
