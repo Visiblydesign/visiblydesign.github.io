@@ -399,18 +399,20 @@
     .form-row { grid-template-columns: 1fr; }
   }
 
-  /* MOBILE LAYOUT CORRECTIONS TO MATCH THE SCREENSHOT */
+  /* MOBILE LAYOUT CORRECTIONS TO MATCH THE SCREENSHOT (DISTRIBUTED AND CENTERED) */
   @media (max-width: 640px) {
     .hero {
-      min-height: auto !important;
-      padding: 7.5rem 5vw 4rem !important;
-      justify-content: flex-start !important;
+      min-height: 100vh !important;
+      padding: 5.5rem 5vw 3rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
       align-items: center !important;
       text-align: center !important;
     }
 
     .hero-badge {
-      margin: 0 auto 1.5rem !important;
+      margin: 0 auto 1rem !important;
       font-size: 0.7rem !important;
       padding: 0.45rem 0.9rem !important;
     }
@@ -425,13 +427,13 @@
 
     .hero-sub {
       max-width: 95% !important;
-      margin: 1.5rem auto 0 !important;
-      font-size: 0.95rem !important;
-      line-height: 1.55 !important;
+      margin: 0.85rem auto 0 !important; /* Verringert von 1.5rem auf 0.85rem */
+      font-size: 0.92rem !important;
+      line-height: 1.5 !important;
     }
 
     .hero-actions {
-      margin: 2rem auto 0 !important;
+      margin: 1.5rem auto 0 !important; /* Verringert von 2rem auf 1.5rem */
       width: 100% !important;
       max-width: 310px !important;
       display: flex !important;
@@ -443,7 +445,7 @@
     .hero-actions a {
       width: 100% !important;
       text-align: center !important;
-      padding: 0.85rem 1.5rem !important;
+      padding: 0.8rem 1.5rem !important;
       font-size: 0.9rem !important;
     }
 
@@ -453,8 +455,8 @@
       width: 100% !important;
       max-width: 360px !important;
       gap: 0.5rem !important;
-      margin: 3rem auto 0 !important;
-      padding: 1.5rem 0 0 !important;
+      margin: 2rem auto 0 !important; /* Verringert von 3rem auf 2rem */
+      padding: 1.25rem 0 0 !important;
       border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
 
@@ -463,23 +465,23 @@
     }
 
     .stat-icon {
-      width: 36px !important;
-      height: 36px !important;
-      margin-bottom: 0.5rem !important;
+      width: 34px !important;
+      height: 34px !important;
+      margin-bottom: 0.4rem !important;
     }
     
     .stat-icon svg {
-      width: 15px !important;
-      height: 15px !important;
+      width: 14px !important;
+      height: 14px !important;
     }
 
     .stat-num {
-      font-size: 1.15rem !important;
+      font-size: 1.1rem !important;
       line-height: 1.1 !important;
     }
 
     .stat-num .stat-prefix {
-      font-size: 0.75rem !important;
+      font-size: 0.7rem !important;
     }
 
     .stat-label {
@@ -512,7 +514,7 @@
     }
 
     .stats {
-      margin-top: 2rem !important;
+      margin-top: 1.5rem !important;
     }
   }
 
@@ -772,328 +774,4 @@
             <li>Priorisierte Betreuung, Revisionen & optional laufende Pflege</li>
           </ul>
           <h4>Ihre Vorteile</h4>
-          <p>Ein Ansprechpartner für alles Digitale – von der Idee bis live, ohne Koordinationschaos zwischen mehreren Dienstleistern.</p>
-          <h4>Warum fair kalkuliert?</h4>
-          <p>Sie erhalten ein maßgeschneidertes Angebot statt Pauschalpreis – jede Position ist nachvollziehbar und projektbezogen.</p>
-          <h4>Individuelle Anpassung</h4>
-          <p>Umfang, Timeline und Budget definieren wir gemeinsam – inklusive optionaler Folgepakete nach Go-live.</p>
-        </div>
-      </div>
-    </article>
-  </div>
-  <p class="pricing-intro reveal" style="margin-top:2rem;margin-bottom:0;font-size:0.85rem;">Alle Preise verstehen sich als Richtwerte. Nach Ihrer Anfrage erhalten Sie ein verbindliches, auf Sie zugeschnittenes Angebot.</p>
-</section>
-
-<section class="cta-band">
-  <div class="cta-inner reveal">
-    <div>
-      <h3>Passendes Paket gefunden?</h3>
-      <p>Transparente Preise ab 29 € – jedes Projekt wird individuell auf Ihre Ziele abgestimmt.</p>
-    </div>
-    <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
-  </div>
-</section>
-
-<section class="process" id="ablauf">
-  <p class="section-label reveal">Ablauf</p>
-  <h2 class="reveal">Einfach. Schnell. Digital.</h2>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">01</div>
-      <h3>Anfrage über Formular</h3>
-      <p>Sie füllen das Kontaktformular aus oder schreiben per E-Mail – kein Anruf, kein Meeting, alles schriftlich.</p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">02</div>
-      <h3>Angebot & Abstimmung</h3>
-      <p>Ich schicke Ihnen ein konkretes Angebot. Fragen klären wir per E-Mail – schnell und unkompliziert.</p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">03</div>
-      <h3>Umsetzung</h3>
-      <p>Ich erledige alles. Sie erhalten das fertige Ergebnis – pünktlich und ohne Aufwand für Sie.</p>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">04</div>
-      <h3>Fertig & live</h3>
-      <p>Ihr Shop, Ihre Texte, Ihr Content – einsatzbereit. Bei Bedarf bleibe ich als langfristiger Partner an Ihrer Seite.</p>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="bewertungen">
-  <p class="section-label reveal">Kundenstimmen</p>
-  <h2 class="reveal">Was Kunden sagen.</h2>
-  <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
-      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <p class="testimonial-text">„Unser Shopify-Shop war in wenigen Tagen online. Die Produkttexte klingen professionell – und ich musste kein einziges Meeting dafür einplanen. Genau das, was ich als Einzelunternehmerin brauchte."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">SK</div>
-        <div>
-          <div class="testimonial-name">Sarah K.</div>
-          <div class="testimonial-role">Handmade-Shop, München</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-1">
-      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <p class="testimonial-text">„Die Landingpage-Texte haben unsere Anfragen spürbar erhöht. Kommunikation lief ausschließlich per E-Mail, Antworten kamen schnell und auf den Punkt. Sehr unkompliziert."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">MT</div>
-        <div>
-          <div class="testimonial-name">Markus T.</div>
-          <div class="testimonial-role">IT-Dienstleister, Hamburg</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-2">
-      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <p class="testimonial-text">„Ein Monat Social-Media-Content, fertig zum Posten – inklusive Captions, die wirklich zu unserer Marke passen. Preis-Leistung für ein kleines Team unschlagbar."</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">LB</div>
-        <div>
-          <div class="testimonial-name">Lisa B.</div>
-          <div class="testimonial-role">Café & Catering, Berlin</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="kontakt">
-  <p class="section-label reveal">Kontakt</p>
-  <h2 class="reveal">Bereit loszulegen?</h2>
-  <p class="contact-sub reveal">Füllen Sie das Formular aus – ich melde mich innerhalb von 24 Stunden mit einem passenden Angebot.</p>
-  <div class="contact-box reveal">
-    <form id="contact-form" novalidate>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Ihr Name" autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="email">E-Mail *</label>
-          <input type="email" id="email" name="email" required placeholder="ihre@email.de" autocomplete="email">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="company">Unternehmen <span class="optional">(optional)</span></label>
-        <input type="text" id="company" name="company" placeholder="Firmenname" autocomplete="organization">
-      </div>
-      <div class="form-group">
-        <label for="service">Gewünschte Leistung *</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Bitte wählen …</option>
-          <option value="Online-Shop">Online-Shop Erstellung</option>
-          <option value="Texte & Copywriting">Texte & Copywriting</option>
-          <option value="Social Media">Social Media Content</option>
-          <option value="Logo & Design">Logo & Design</option>
-          <option value="Kombination">Kombination mehrerer Leistungen</option>
-          <option value="Sonstiges">Sonstiges / Beratung</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="project">Beschreibung des Projekts *</label>
-        <textarea id="project" name="project" required placeholder="Was möchten Sie erreichen? Welche Ziele, Fristen oder Besonderheiten gibt es?"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="budget">Budget *</label>
-        <select id="budget" name="budget" required>
-          <option value="" disabled selected>Budget-Rahmen wählen …</option>
-          <option value="unter 50€">unter 50 €</option>
-          <option value="50–100€">50 – 100 €</option>
-          <option value="100–250€">100 – 250 €</option>
-          <option value="250–500€">250 – 500 €</option>
-          <option value="über 500€">über 500 €</option>
-          <option value="noch unklar">Noch unklar / Beratung gewünscht</option>
-        </select>
-      </div>
-      <button type="submit" class="form-submit">Anfrage absenden</button>
-    </form>
-    <div class="contact-alt">
-      <p>Oder direkt per E-Mail:</p>
-      <a href="mailto:visib.ly@outlook.com" class="contact-email">✉️ visib.ly@outlook.com</a>
-      <p class="contact-note">Komplett remote · Kein Meeting · Antwort innerhalb 24h</p>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <p class="section-label reveal">FAQ</p>
-  <h2 class="reveal">Häufige Fragen.</h2>
-  <div class="faq-list">
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Warum stehen bei den Paketen nur „ab"-Preise?
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Jedes Projekt hat unterschiedlichen Umfang – von einem kurzen Text bis zum kompletten Shop. Die „ab"-Preise geben Orientierung; nach Ihrer Anfrage erhalten Sie ein festes, transparentes Angebot ohne versteckte Kosten.</p>
-      </div>
-    </div>
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Muss ich telefonieren oder an Meetings teilnehmen?
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Nein. Die gesamte Abstimmung läuft per E-Mail oder über das Kontaktformular – schnell, dokumentiert und ohne Termindruck.</p>
-      </div>
-    </div>
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Wie schnell bekomme ich eine Antwort?
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>In der Regel innerhalb von 24 Stunden an Werktagen. Bei dringenden Projekten vermerken Sie das einfach im Formular.</p>
-      </div>
-    </div>
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Kann ich Leistungen aus verschiedenen Paketen kombinieren?
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Ja. Shop, Texte und Social Media lassen sich flexibel kombinieren. Beschreiben Sie Ihr Vorhaben im Formular – ich schlage das passende Paket vor.</p>
-      </div>
-    </div>
-    <div class="faq-item reveal">
-      <button type="button" class="faq-question" aria-expanded="false">
-        Welche Zahlungsmethoden gibt es?
-        <span class="faq-icon">▼</span>
-      </button>
-      <div class="faq-answer">
-        <p>Die Details klären wir im Angebot – üblich sind Rechnung mit Überweisung oder Teilzahlungen bei größeren Projekten. Alles wird vor Start schriftlich festgehalten.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="privacy-page" id="datenschutz">
-  <div class="privacy-inner">
-    <a href="#" class="privacy-close">← Zurück zur Website</a>
-    <p class="section-label">Rechtliches</p>
-    <h2>Datenschutz.</h2>
-
-    <h3>1. Allgemeine Hinweise</h3>
-    <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der gesetzlichen Vorschriften.</p>
-    <p>Beim Besuch dieser Website können technische Daten wie Browsertyp, Betriebssystem, Uhrzeit des Zugriffs oder IP-Adresse automatisch durch den Hosting-Anbieter verarbeitet werden.</p>
-
-    <h3>2. Verantwortliche Stelle</h3>
-    <p>Verantwortlich für die Datenverarbeitung auf dieser Website:</p>
-    <p><strong>Visibly</strong><br>E-Mail: visib.ly@outlook.com</p>
-
-    <h3>3. Kontaktaufnahme</h3>
-    <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Die übermittelten Daten werden nicht an Dritte weitergegeben.</p>
-
-    <h3>4. Hosting</h3>
-    <p>Diese Website wird bei einem externen Hosting-Anbieter betrieben. Dabei können Server-Logfiles automatisch gespeichert werden.</p>
-    <ul>
-      <li>IP-Adresse</li>
-      <li>Browserinformationen</li>
-      <li>Datum und Uhrzeit des Zugriffs</li>
-      <li>aufgerufene Seiten</li>
-    </ul>
-    <p>Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
-
-    <h3>5. Externe Schriftarten</h3>
-    <p>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Laden der Website kann eine Verbindung zu Servern von Google hergestellt werden.</p>
-    <p>Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
-
-    <h3>6. Ihre Rechte</h3>
-    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Zur Ausübung genügt eine formlose E-Mail.</p>
-
-    <h3>7. Änderungen</h3>
-    <p>Diese Datenschutzerklärung kann bei technischen oder rechtlichen Änderungen angepasst werden.</p>
-    <p>Stand: 2026</p>
-  </div>
-</section>
-
-<footer>
-  <a href="#" class="logo" style="font-size:1rem;">Visib<span>.</span>ly</a>
-  <p>© 2026 Visibly · <a href="#pakete" style="color:var(--muted);text-decoration:none;">Pakete</a> · <a href="#faq" style="color:var(--muted);text-decoration:none;">FAQ</a> · <a href="#kontakt" style="color:var(--muted);text-decoration:none;">Kontakt</a> · <a href="#datenschutz" style="color:var(--muted);text-decoration:none;">Datenschutz</a></p>
-</footer>
-
-<script>
-  // Immer oben starten nach Seiten-Reload
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-  window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-  });
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        const delay = e.target.classList.contains('reveal-delay-1') ? 80
-          : e.target.classList.contains('reveal-delay-2') ? 160
-          : e.target.classList.contains('reveal-delay-3') ? 240 : 0;
-        setTimeout(() => e.target.classList.add('visible'), delay);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.getElementById('nav-links');
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open);
-    navToggle.textContent = open ? '✕' : '☰';
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.textContent = '☰';
-    });
-  });
-
-  document.querySelectorAll('.pricing-card').forEach(card => {
-    const toggle = () => {
-      const isOpen = card.classList.toggle('open');
-      card.setAttribute('aria-expanded', isOpen);
-      card.querySelector('.pricing-toggle span').textContent = isOpen ? 'Details ausblenden' : 'Details anzeigen';
-    };
-    card.addEventListener('click', (e) => { if (e.target.closest('a')) return; toggle(); });
-    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
-  });
-
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-question');
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  });
-
-  document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const form = e.target;
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const company = form.company.value.trim();
-    const service = form.service.value;
-    const project = form.project.value.trim();
-    const budget = form.budget.value;
-    const subject = encodeURIComponent('Projektanfrage – ' + service);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'E-Mail: ' + email + '\n' +
-      (company ? 'Unternehmen: ' + company + '\n' : '') +
-      'Leistung: ' + service + '\n' +
-      'Budget: ' + budget + '\n\n' +
-      'Projektbeschreibung:\n' + project
-    );
-    window.location.href = 'mailto:visib.ly@outlook.com?subject=' + subject + '&body=' + body;
-  });
-</script>
-
-</body>
-</html>
+          <p>Ein Anspre
