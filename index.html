@@ -189,4 +189,121 @@
   .form-submit { width: 100%; background: var(--accent); color: #fff; border: none; padding: 0.9rem; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: background 0.2s; }
   .form-submit:hover { background: var(--accent-hover); }
 
-  footer {
+  footer { border-top: 1px solid var(--border); padding: 2rem 6vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+  footer div a { color: var(--muted); text-decoration: none; font-size: 0.8rem; margin-left: 1rem; }
+  footer div a:hover { color: #fff; }
+
+  .privacy-page { display: none; position: fixed; inset: 0; z-index: 999; overflow-y: auto; background: var(--bg); padding: 6rem 6vw 4rem; text-align: left; }
+  .privacy-page:target { display: block; }
+  .privacy-inner { max-width: 700px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+  .privacy-inner h2 { margin-bottom: 1rem; }
+  .privacy-inner h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; }
+  .privacy-inner p, .privacy-inner li { color: var(--muted); font-size: 0.85rem; }
+  .legal-close { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: #070c1a; padding: 1.5rem; border-bottom: 1px solid var(--border); }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .stat-item::after { display: none !important; }
+    .stat-num { font-size: 1.25rem; }
+    .stat-label { font-size: 0.65rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<nav>
+  <a href="#" class="logo">Visib<span>.</span>ly</a>
+  <button type="button" class="nav-toggle" id="menu-btn">☰</button>
+  <div class="nav-links" id="nav-links">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#pakete">Preise</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt" class="nav-cta">Anfrage starten</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Online Service</div>
+  <h1>Digitale Präsenz<br>die <span>überzeugt.</span></h1>
+  <p class="hero-sub">Online-Shops, Texte, Logos und Social-Media-Content – alles aus einer Hand. Transparent, schnell &amp; zuverlässig.</p>
+  
+  <div class="hero-actions">
+    <a href="#kontakt" class="btn-primary">Jetzt unverbindlich anfragen ➔</a>
+    <a href="https://wa.me/DEINE_NUMMER" class="btn-secondary">
+      <svg style="width:18px; height:18px; fill:currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.973 0c3.178.001 6.165 1.24 8.413 3.488 2.248 2.248 3.486 5.236 3.486 8.414 0 6.562-5.35 11.912-11.912 11.912-2.005-.001-3.975-.51-5.728-1.479L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.795 1.451 5.319 0 9.644-4.327 9.648-9.653.002-2.578-1.001-5.003-2.83-6.832-1.829-1.83-4.254-2.831-6.837-2.832-5.324 0-9.651 4.328-9.655 9.654-.002 1.705.451 3.374 1.312 4.848l-.995 3.637 3.738-.981zm11.287-6.75c-.3-.15-1.773-.875-2.048-.975s-.475-.15-.675.15-.775.975-.95 1.175-.35.225-.65.075c-.3-.15-1.267-.467-2.414-1.485-.893-.797-1.496-1.783-1.672-2.083s-.019-.463.132-.612c.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525-.675-1.625-.925-2.225c-.244-.589-.493-.51-.675-.521a11.63 11.63 0 0 0-.487-.004c-.375 0-.988.14-1.503.7s-1.973 1.925-1.973 4.694 2.012 5.438 2.288 5.813c.275.375 3.96 6.046 9.587 8.475 1.34.578 2.384.923 3.2 1.186 1.333.424 2.55.365 3.51.222 1.071-.159 1.773-.875 2.048-.975s.675-.15.95-.15c.275 0 .6.15.9.3s1.773.875 2.048.975z"/></svg>
+      Direkt über WhatsApp
+    </a>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-icon">🔷</div>
+      <div class="stat-num"><span>ab</span> 29€</div>
+      <div class="stat-label">Faire Preise</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🕒</div>
+      <div class="stat-num">24h</div>
+      <div class="stat-label">Schnelle Lieferung</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">✍️</div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Schriftlich &amp; Remote</div>
+    </div>
+  </div>
+  
+  <div class="hero-scroll-arrow" onclick="document.getElementById('leistungen').scrollIntoView();">▼</div>
+</section>
+
+<section id="leistungen">
+  <span class="section-tag">Leistungen</span>
+  <h2>Was ich für Sie tue.</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="icon">🛒</span>
+      <h3>Online-Shops</h3>
+      <p>Sie möchten Ihre Produkte online verkaufen? Ich erstelle für Sie einen schlüsselfertigen Online-Shop mit Shopify oder WooCommerce.</p>
+      <a href="#kontakt" class="service-link">→ Mehr erfahren</a>
+    </div>
+    <div class="service-card">
+      <span class="icon">✍️</span>
+      <h3>Texte &amp; Copywriting</h3>
+      <p>Egal ob Produktbeschreibungen, Werbetexte oder Blogbeiträge – ich verfasse ansprechende Texte, die Ihre Zielgruppe überzeugen.</p>
+      <a href="#kontakt" class="service-link">→ Mehr erfahren</a>
+    </div>
+    <div class="service-card">
+      <span class="icon">📱</span>
+      <h3>Social-Media-Content</h3>
+      <p>Bringen Sie Ihre Kanäle zum Glänzen. Ich plane und erstelle kreativen Content (Beiträge, Captions, Ideen) für Instagram, TikTok und Co.</p>
+      <a href="#kontakt" class="service-link">→ Mehr erfahren</a>
+    </div>
+    <div class="service-card">
+      <span class="icon">✦</span>
+      <h3>Logos &amp; Branding</h3>
+      <p>Ein starkes Logo ist das Gesicht Ihrer Marke. Ich entwerfe ein modernes, individuelles Logo, das im Gedächtnis bleibt.</p>
+      <a href="#kontakt" class="service-link">→ Mehr erfahren</a>
+    </div>
+  </div>
+</section>
+
+<section id="pakete">
+  <span class="section-tag">Pakete</span>
+  <h2>Preise &amp; Pakete</h2>
+  <p style="color:var(--muted); margin-top:-1.5rem; margin-bottom: 2rem; font-size:0.9rem;">Für jedes Projekt die passende Lösung. Transparent und ohne versteckte Kosten.</p>
+  
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div>
+        <h3>Basic</h3>
+        <div class="price"><span>ab </span>29€</div>
+        <p>Perfekt für kleinere Textarbeiten oder einzelne Social-Media-Posts.</p>
+        <div class
